@@ -13,9 +13,10 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main>
+      <main className="footer-reveal-main">
         <Outlet />
       </main>
+      <div className="footer-reveal-spacer" aria-hidden="true" />
       <Footer />
     </>
   )

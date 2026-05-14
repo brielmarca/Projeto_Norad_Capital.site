@@ -11,7 +11,7 @@ export default function Contato() {
 
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center px-6 pt-24 pb-16">
-      <HeroLineBackground />
+      <HeroLineBackground variant="contact" />
       <div className="relative z-10 max-w-5xl mx-auto w-full space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

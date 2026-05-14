@@ -42,7 +42,7 @@ export default function Home() {
     <>
       {/* 1. HERO */}
       <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
-        <HeroLineBackground />
+        <HeroLineBackground variant="growth" />
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}

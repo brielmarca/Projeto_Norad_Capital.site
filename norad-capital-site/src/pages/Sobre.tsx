@@ -12,7 +12,7 @@ export default function Sobre() {
   return (
     <>
       <section className="relative overflow-hidden min-h-screen flex items-center px-6 pt-24 pb-16">
-        <HeroLineBackground />
+        <HeroLineBackground variant="institutional" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
