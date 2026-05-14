@@ -225,23 +225,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. NATIONAL PRESENCE */}
-      <section className="py-32 px-6 bg-navy-50">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <p className="text-lg md:text-xl text-navy-400 leading-relaxed">
-            Com escritório em São Paulo e atuação em todo o Brasil,
-            a Norad Capital combina presença institucional,
-            relacionamento de mercado e atendimento consultivo.
-          </p>
-        </motion.div>
-      </section>
-
       {/* 6. LEGAL TRANSPARENCY */}
       <section className="py-16 px-6 border-t border-navy-100">
         <div className="max-w-3xl mx-auto text-center">

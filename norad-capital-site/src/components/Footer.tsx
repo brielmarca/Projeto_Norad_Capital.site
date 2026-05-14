@@ -8,11 +8,12 @@ export default function Footer() {
     <footer className="bg-navy-950 text-navy-300 py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="w-12 h-0.5 bg-gold mb-8" />
-        <div className="bg-white rounded-xl p-4 inline-block mb-6">
+        <div className="mb-6">
           <img
             src={logoSrc}
             alt="Norad Capital"
-            className="h-10 w-auto"
+            className="h-8 sm:h-9 md:h-10 w-auto"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </div>
         <div className="text-sm leading-relaxed space-y-2 max-w-xl">
