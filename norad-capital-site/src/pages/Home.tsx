@@ -268,11 +268,11 @@ export default function Home() {
                 className="group relative"
               >
                 <div className="relative border border-white/10 rounded-2xl p-8 h-full flex flex-col items-center text-center space-y-5 bg-white/[0.03] backdrop-blur-sm transition-all duration-500 hover:border-gold/40 hover:bg-white/[0.06] hover:shadow-[0_0_40px_-12px_rgba(201,168,76,0.15)]">
-                  <div className="w-full h-24 flex items-center justify-center">
+                  <div className="w-full h-28 flex items-center justify-center">
                     <img
                       src={item.logo}
                       alt={item.name}
-                      className="max-h-20 max-w-[80%] object-contain opacity-100 grayscale-0 md:opacity-70 md:grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                      className="max-h-28 max-w-[85%] object-contain opacity-100 grayscale-0 md:opacity-70 md:grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
                     />
                   </div>
                   <div className="space-y-2">
