@@ -272,7 +272,7 @@ export default function Home() {
                     <img
                       src={item.logo}
                       alt={item.name}
-                      className="max-h-20 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                      className="max-h-20 max-w-[80%] object-contain opacity-100 grayscale-0 md:opacity-70 md:grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
                     />
                   </div>
                   <div className="space-y-2">
