@@ -63,7 +63,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="footer-reveal-panel bg-navy-950 text-navy-300 py-20 px-6"
+      className="footer-reveal-panel bg-navy-950 text-navy-300 py-12 md:py-20 px-6"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -76,7 +76,7 @@ export default function Footer() {
         />
 
         <motion.div
-          className="grid md:grid-cols-3 gap-12 mb-12"
+          className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -106,7 +106,7 @@ export default function Footer() {
                 href={`https://wa.me/${contato.whatsapp.number}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors py-2"
                 variants={itemVariants}
               >
                 <MessageCircle size={14} />
@@ -114,7 +114,7 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href={`tel:${contato.phone}`}
-                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors py-2"
                 variants={itemVariants}
               >
                 <Phone size={14} />
@@ -122,7 +122,7 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href={`mailto:${contato.email.address}`}
-                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors py-2"
                 variants={itemVariants}
               >
                 <Mail size={14} />
@@ -166,7 +166,7 @@ export default function Footer() {
             <p className="text-xs text-navy-500">{footer.rights}</p>
             <motion.button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-xs text-navy-400 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-xs text-navy-400 hover:text-white transition-colors py-2"
               whileHover={shouldReduceMotion ? undefined : { y: -2 }}
               whileTap={shouldReduceMotion ? undefined : { y: 0 }}
             >

@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-navy-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <Link to="/" className="shrink-0">
           <img
             src={logoSrc}
@@ -37,7 +37,7 @@ export default function Header() {
         </nav>
 
         <button
-          className="md:hidden text-navy-900"
+          className="md:hidden text-navy-900 p-3"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menu"
         >

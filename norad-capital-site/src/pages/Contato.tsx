@@ -43,7 +43,7 @@ export default function Contato() {
 
               <a
                 href={`tel:${contato.phone}`}
-                className="flex items-center gap-3 text-navy-400 hover:text-navy-900 transition-colors"
+                className="flex items-center gap-3 text-navy-400 hover:text-navy-900 transition-colors py-3"
               >
                 <Phone size={20} />
                 <span>{contato.phone}</span>
@@ -51,7 +51,7 @@ export default function Contato() {
 
               <a
                 href={`mailto:${contato.email.address}`}
-                className="flex items-center gap-3 text-navy-400 hover:text-navy-900 transition-colors"
+                className="flex items-center gap-3 text-navy-400 hover:text-navy-900 transition-colors py-3"
               >
                 <Mail size={20} />
                 <span>{contato.email.address}</span>

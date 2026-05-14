@@ -28,7 +28,7 @@ export default function Sobre() {
         </motion.div>
       </section>
 
-      <section className="py-32 px-6 bg-navy-50">
+      <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function Sobre() {
         </motion.div>
       </section>
 
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-24 lg:py-32 px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

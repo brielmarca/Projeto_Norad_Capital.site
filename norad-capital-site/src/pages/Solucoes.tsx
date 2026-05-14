@@ -36,9 +36,9 @@ export default function Solucoes() {
             >
               <Link
                 to={item.path}
-                className="group block border border-navy-100 rounded-3xl p-12 space-y-6 hover:border-navy-200 hover:shadow-sm transition-all duration-500"
+                className="group block border border-navy-100 rounded-3xl p-6 md:p-8 lg:p-12 space-y-6 hover:border-navy-200 hover:shadow-sm transition-all duration-500"
               >
-                <h3 className="text-3xl font-medium text-navy-900 tracking-tight">
+                <h3 className="text-2xl md:text-3xl font-medium text-navy-900 tracking-tight">
                   {item.title}
                 </h3>
                 <p className="text-navy-400 leading-relaxed">

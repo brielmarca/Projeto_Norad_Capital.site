@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 
 type Variant =
   | "growth"
@@ -47,9 +47,10 @@ interface Props {
 }
 
 export default function HeroLineBackground({ variant = "growth" }: Props) {
+  const shouldReduceMotion = useReducedMotion()
   const { scrollYProgress } = useScroll()
-  const yGold = useTransform(scrollYProgress, [0, 0.2], [0, 50])
-  const yNavy = useTransform(scrollYProgress, [0, 0.2], [0, -35])
+  const yGold = useTransform(scrollYProgress, [0, 0.2], [0, shouldReduceMotion ? 0 : 50])
+  const yNavy = useTransform(scrollYProgress, [0, 0.2], [0, shouldReduceMotion ? 0 : -35])
   const { gold, navy } = paths[variant]
 
   return (
@@ -67,11 +68,11 @@ export default function HeroLineBackground({ variant = "growth" }: Props) {
         strokeWidth="2"
         vectorEffect="non-scaling-stroke"
         strokeLinecap="round"
-        opacity="0.1"
+        opacity={shouldReduceMotion ? 0.1 : 0.1}
         style={{ translateY: yGold }}
-        initial={{ pathLength: 0 }}
+        initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 2.5, ease, delay: 0.3 }}
+        transition={shouldReduceMotion ? { duration: 0 } : { duration: 2.5, ease, delay: 0.3 }}
       />
       <motion.path
         d={navy}
@@ -81,9 +82,9 @@ export default function HeroLineBackground({ variant = "growth" }: Props) {
         strokeLinecap="round"
         opacity="0.06"
         style={{ translateY: yNavy }}
-        initial={{ pathLength: 0 }}
+        initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 2.5, ease, delay: 0.6 }}
+        transition={shouldReduceMotion ? { duration: 0 } : { duration: 2.5, ease, delay: 0.6 }}
       />
     </svg>
   )

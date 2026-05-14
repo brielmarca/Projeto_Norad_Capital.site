@@ -48,7 +48,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-navy-900 leading-[0.95]"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-navy-900 leading-[1.15] sm:leading-[1.05] md:leading-[0.95]"
           >
             Crédito Estruturado com Inteligência
           </motion.h1>
@@ -94,8 +94,8 @@ export default function Home() {
       </section>
 
       {/* 2. STORYTELLING */}
-      <section className="py-32 px-6">
-        <div className="max-w-3xl mx-auto space-y-32">
+      <section className="py-16 md:py-24 lg:py-32 px-6">
+        <div className="max-w-3xl mx-auto space-y-16 md:space-y-24 lg:space-y-32">
           {storyItems.map((item, i) => (
             <motion.div
               key={i}
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* 3. SOLUTIONS PREVIEW */}
-      <section className="py-32 px-6 bg-navy-50">
+      <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-50">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             {solutions.map((item, i) => {
@@ -162,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* 4. AUDIENCE SEGMENTATION */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-24 lg:py-32 px-6">
         <div className="max-w-3xl mx-auto text-center space-y-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* PARTNERS */}
-      <section className="py-32 px-6 bg-navy-900">
+      <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-900">
         <div className="max-w-6xl mx-auto space-y-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* 7. FINAL CTA */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-24 lg:py-32 px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
