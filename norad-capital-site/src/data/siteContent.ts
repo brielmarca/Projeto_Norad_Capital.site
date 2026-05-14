@@ -17,10 +17,32 @@ export const siteContent = {
   ],
 
   home: {
-    headline: "Crédito Estruturado com Inteligência",
+    headline: "Crédito Imobiliário Estruturado com Inteligência",
     subheadline:
-      "Crédito imobiliário estruturado com inteligência, clareza e acompanhamento especializado.",
+      "A Norad Capital conecta pessoas e empresas a grandes bancos e instituições financeiras por meio de uma intermediação especializada em Home Equity e Crédito Imobiliário.",
+    phrase: "Capital estratégico para quem construiu valor.",
     cta: "Iniciar Conversa",
+    narrative: {
+      title: "Como conduzimos cada operação",
+      items: [
+        {
+          title: "O patrimônio",
+          text: "Cada operação começa com aquilo que você já construiu. Seu imóvel é a base que viabiliza condições mais estruturadas de crédito.",
+        },
+        {
+          title: "A estratégia",
+          text: "Analisamos seu perfil, seus objetivos e o momento certo para estruturar a solução mais alinhada ao seu projeto.",
+        },
+        {
+          title: "A estruturação",
+          text: "Organizamos cada detalhe da operação e direcionamos a instituição financeira mais adequada ao seu caso.",
+        },
+        {
+          title: "O acompanhamento",
+          text: "Acompanhamos cada etapa — da análise à formalização — para que você tenha suporte do início ao fim.",
+        },
+      ],
+    },
     solucoes: {
       title: "Nossas Soluções",
       items: [
@@ -40,8 +62,9 @@ export const siteContent = {
     },
     transparencia: {
       title: "Transparência",
-      text: "Todas as condições são apresentadas de forma clara e detalhada antes de qualquer decisão. Taxas, prazos, parcelas e custos efetivos totais — você sabe exatamente o que está contratando.",
+      text: "A Norad Capital atua como intermediadora de crédito. A aprovação, taxas, prazos, valores e demais condições estão sujeitos à análise e aos critérios das instituições financeiras parceiras.",
     },
+    finalCta: "Falar com Especialista",
   },
 
   sobre: {

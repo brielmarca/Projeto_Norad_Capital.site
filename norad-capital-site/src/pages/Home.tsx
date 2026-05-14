@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { siteContent } from "../data/siteContent"
 import WhatsAppButton from "../components/WhatsAppButton"
-import { ShieldCheck, ArrowRight } from "lucide-react"
+import { ShieldCheck, ArrowRight, ArrowUpRight } from "lucide-react"
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -11,10 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <section
-        id="intro"
-        className="min-h-screen flex items-center justify-center px-6 pt-20 pb-16"
-      >
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20 pb-16">
         <div className="max-w-5xl mx-auto text-center space-y-10">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -47,7 +44,58 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease }}
+          className="max-w-2xl mx-auto text-center"
+        >
+          <p className="text-xl md:text-2xl text-navy-900/50 font-light italic tracking-wide">
+            {home.phrase}
+          </p>
+        </motion.div>
+      </section>
+
       <section className="py-32 px-6 bg-navy-50">
+        <div className="max-w-5xl mx-auto space-y-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease }}
+            className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-navy-900 leading-tight"
+          >
+            {home.narrative.title}
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
+            {home.narrative.items.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, delay: i * 0.1, ease }}
+                className="space-y-3"
+              >
+                <p className="text-sm font-medium text-gold-dark tracking-widest uppercase">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="text-2xl font-medium text-navy-900 tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-navy-400 leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto space-y-12">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -88,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 bg-navy-50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,16 +144,43 @@ export default function Home() {
           transition={{ duration: 0.8, ease }}
           className="max-w-3xl mx-auto space-y-6 text-center"
         >
-          <ShieldCheck
-            size={40}
-            className="text-gold mx-auto"
-          />
+          <ShieldCheck size={40} className="text-gold mx-auto" />
           <h2 className="text-3xl md:text-4xl font-light tracking-tight text-navy-900">
             {home.transparencia.title}
           </h2>
           <p className="text-lg text-navy-400 leading-relaxed">
             {home.transparencia.text}
           </p>
+        </motion.div>
+      </section>
+
+      <section className="py-32 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease }}
+          className="max-w-xl mx-auto text-center space-y-8"
+        >
+          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-navy-900">
+            Vamos conversar?
+          </h2>
+          <p className="text-lg text-navy-400 leading-relaxed">
+            Agende uma conversa e descubra a solução ideal para o seu projeto.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <WhatsAppButton
+              number={contato.whatsapp.number}
+              message={contato.whatsapp.message}
+              label={home.finalCta}
+            />
+            <Link
+              to="/contato"
+              className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-900 transition-colors text-sm font-medium"
+            >
+              Outros canais de contato <ArrowUpRight size={16} />
+            </Link>
+          </div>
         </motion.div>
       </section>
     </>
