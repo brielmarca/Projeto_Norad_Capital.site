@@ -31,42 +31,8 @@ body {
   background-color: #ffffff;
 }
 
-:root {
-  --footer-reveal-height: 900px;
-}
-
-.footer-reveal-main {
-  position: relative;
-  z-index: 10;
-  background-color: #ffffff;
-}
-
-.footer-reveal-spacer {
-  position: relative;
-  z-index: 1;
-  height: var(--footer-reveal-height);
-  pointer-events: none;
-}
-
-.footer-reveal-panel {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .footer-reveal-spacer {
-    height: 0;
-  }
-
-  .footer-reveal-panel {
-    position: relative;
   }
 }

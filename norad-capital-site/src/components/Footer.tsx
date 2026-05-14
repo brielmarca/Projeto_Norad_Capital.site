@@ -1,30 +1,25 @@
-import { useEffect, useRef } from "react"
 import { siteContent } from "../data/siteContent"
 import logoSrc from "../assets/Noradlogo.png"
 import { MessageCircle, Phone, Mail, MapPin, ArrowUp } from "lucide-react"
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 import type { Transition, Variants } from "framer-motion"
 
 export default function Footer() {
   const { footer, company, contato } = siteContent
-  const shouldReduceMotion = useReducedMotion()
-  const footerRef = useRef<HTMLElement>(null)
 
   const premiumEase: [number, number, number, number] = [0.22, 1, 0.36, 1]
   const revealTransition: Transition = { duration: 0.8, ease: premiumEase }
 
   const containerVariants: Variants = {
-    hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: shouldReduceMotion
-        ? { duration: 0 }
-        : { staggerChildren: 0.12, delayChildren: 0.08 },
+      transition: { staggerChildren: 0.12, delayChildren: 0.08 },
     },
   }
 
   const itemVariants: Variants = {
-    hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 },
+    hidden: { opacity: 0, y: 18 },
     visible: {
       opacity: 1,
       y: 0,
@@ -36,42 +31,15 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  useEffect(() => {
-    const footerElement = footerRef.current
-
-    if (!footerElement) return
-
-    const updateFooterHeight = () => {
-      document.documentElement.style.setProperty(
-        "--footer-reveal-height",
-        `${footerElement.offsetHeight}px`,
-      )
-    }
-
-    updateFooterHeight()
-
-    const resizeObserver = new ResizeObserver(updateFooterHeight)
-    resizeObserver.observe(footerElement)
-    window.addEventListener("resize", updateFooterHeight)
-
-    return () => {
-      resizeObserver.disconnect()
-      window.removeEventListener("resize", updateFooterHeight)
-    }
-  }, [])
-
   return (
-    <footer
-      ref={footerRef}
-      className="footer-reveal-panel bg-navy-950 text-navy-300 py-12 md:py-20 px-6"
-    >
+    <footer className="bg-navy-950 text-navy-300 py-12 md:py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="w-12 h-0.5 bg-gold mb-10"
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scaleX: 0 }}
+          initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: premiumEase }}
+          transition={{ duration: 0.7, ease: premiumEase }}
           style={{ transformOrigin: "left" }}
         />
 
@@ -167,8 +135,8 @@ export default function Footer() {
             <motion.button
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-xs text-navy-400 hover:text-white transition-colors py-2"
-              whileHover={shouldReduceMotion ? undefined : { y: -2 }}
-              whileTap={shouldReduceMotion ? undefined : { y: 0 }}
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
             >
               Voltar ao topo <ArrowUp size={12} />
             </motion.button>
