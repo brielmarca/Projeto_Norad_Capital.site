@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { siteContent } from "../data/siteContent"
 import SectionTitle from "../components/SectionTitle"
+import HeroLineBackground from "../components/HeroLineBackground"
 import { MapPin, Building } from "lucide-react"
 
 const ease = [0.16, 1, 0.3, 1] as const
@@ -10,12 +11,13 @@ export default function Sobre() {
 
   return (
     <>
-      <section className="min-h-screen flex items-center px-6 pt-24 pb-16">
+      <section className="relative overflow-hidden min-h-screen flex items-center px-6 pt-24 pb-16">
+        <HeroLineBackground />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease }}
-          className="max-w-3xl mx-auto space-y-10"
+          className="relative z-10 max-w-3xl mx-auto space-y-10"
         >
           <SectionTitle>{sobre.title}</SectionTitle>
           <div className="space-y-5 text-base md:text-lg text-navy-400 leading-relaxed">

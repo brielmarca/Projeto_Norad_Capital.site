@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight, Building2, Home as HomeIcon } from "lucide-react"
 import { siteContent } from "../data/siteContent"
+import HeroLineBackground from "../components/HeroLineBackground"
 
 const WHATSAPP_NUMBER = "5511999999999"
 
@@ -40,8 +41,9 @@ export default function Home() {
   return (
     <>
       {/* 1. HERO */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
-        <div className="max-w-4xl mx-auto text-center space-y-10">
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
+        <HeroLineBackground />
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

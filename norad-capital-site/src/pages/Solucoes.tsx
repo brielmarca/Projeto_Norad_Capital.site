@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { siteContent } from "../data/siteContent"
 import SectionTitle from "../components/SectionTitle"
+import HeroLineBackground from "../components/HeroLineBackground"
 import { ArrowRight } from "lucide-react"
 
 const ease = [0.16, 1, 0.3, 1] as const
@@ -10,8 +11,9 @@ export default function Solucoes() {
   const { solucoes } = siteContent
 
   return (
-    <section className="min-h-screen flex items-center px-6 pt-24 pb-16">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center px-6 pt-24 pb-16">
+      <HeroLineBackground />
+      <div className="relative z-10 max-w-7xl mx-auto space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

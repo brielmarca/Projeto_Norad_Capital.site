@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { siteContent } from "../data/siteContent"
 import WhatsAppButton from "../components/WhatsAppButton"
+import HeroLineBackground from "../components/HeroLineBackground"
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -8,8 +9,9 @@ export default function CreditoImobiliario() {
   const { creditoImobiliario, contato } = siteContent
 
   return (
-    <section className="min-h-screen flex items-center px-6 pt-24 pb-16">
-      <div className="max-w-4xl mx-auto space-y-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center px-6 pt-24 pb-16">
+      <HeroLineBackground />
+      <div className="relative z-10 max-w-4xl mx-auto space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
