@@ -24,10 +24,16 @@ export default function Home() {
           >
             {home.headline}
           </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease }}
+            className="h-0.5 w-24 bg-gold mx-auto rounded-full origin-center"
+          />
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease }}
+            transition={{ duration: 0.8, delay: 0.3, ease }}
             className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl mx-auto"
           >
             {home.subheadline}
@@ -47,7 +53,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-32 px-6 bg-navy-50">
+      <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto space-y-12">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -57,6 +63,7 @@ export default function Home() {
             className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-navy-900 leading-tight"
           >
             {home.solucoes.title}
+            <span className="block w-16 h-0.5 bg-gold mt-5 rounded-full" />
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -70,7 +77,7 @@ export default function Home() {
               >
                 <Link
                   to={item.path}
-                  className="group block border border-navy-100 rounded-3xl p-10 space-y-4 hover:border-navy-200 hover:shadow-sm transition-all duration-500"
+                  className="group block bg-white rounded-[18px] p-10 space-y-4 border border-gold/15 shadow-sm hover:shadow-md hover:border-gold/30 transition-all duration-500"
                 >
                   <h3 className="text-2xl font-medium text-navy-900 tracking-tight">
                     {item.title}

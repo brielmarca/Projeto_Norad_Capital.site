@@ -41,22 +41,22 @@ export default function Contato() {
 
               <a
                 href={`tel:${contato.phone}`}
-                className="flex items-center gap-3 text-navy-400 hover:text-navy-900 transition-colors"
+                className="flex items-center gap-3 text-navy-400 hover:text-gold transition-colors duration-300"
               >
-                <Phone size={20} />
+                <Phone size={20} className="text-gold" />
                 <span>{contato.phone}</span>
               </a>
 
               <a
                 href={`mailto:${contato.email.address}`}
-                className="flex items-center gap-3 text-navy-400 hover:text-navy-900 transition-colors"
+                className="flex items-center gap-3 text-navy-400 hover:text-gold transition-colors duration-300"
               >
-                <Mail size={20} />
+                <Mail size={20} className="text-gold" />
                 <span>{contato.email.address}</span>
               </a>
 
               <div className="flex items-start gap-3 text-navy-400">
-                <MapPin size={20} className="shrink-0 mt-0.5" />
+                <MapPin size={20} className="shrink-0 mt-0.5 text-gold" />
                 <span>{contato.office}</span>
               </div>
             </div>
@@ -72,26 +72,26 @@ export default function Contato() {
             <input
               type="text"
               placeholder={contato.form.nameLabel}
-              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-navy-300 transition-colors text-sm"
+              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold/50 transition-colors text-sm"
             />
             <input
               type="email"
               placeholder={contato.form.emailLabel}
-              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-navy-300 transition-colors text-sm"
+              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold/50 transition-colors text-sm"
             />
             <input
               type="tel"
               placeholder={contato.form.phoneLabel}
-              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-navy-300 transition-colors text-sm"
+              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold/50 transition-colors text-sm"
             />
             <textarea
               rows={4}
               placeholder={contato.form.messageLabel}
-              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-navy-300 transition-colors text-sm resize-none"
+              className="w-full px-5 py-4 rounded-2xl border border-navy-100 bg-white text-navy-900 placeholder:text-navy-300 focus:outline-none focus:border-gold/50 transition-colors text-sm resize-none"
             />
             <button
               type="submit"
-              className="w-full bg-navy-900 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-navy-800 transition-all duration-300"
+              className="w-full bg-navy-900 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-navy-800 shadow-sm hover:shadow-md transition-all duration-300"
             >
               {contato.form.submitLabel}
             </button>

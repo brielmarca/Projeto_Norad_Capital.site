@@ -34,7 +34,7 @@ export default function Solucoes() {
             >
               <Link
                 to={item.path}
-                className="group block border border-navy-100 rounded-3xl p-12 space-y-6 hover:border-navy-200 hover:shadow-sm transition-all duration-500"
+                className="group block bg-white rounded-[18px] p-12 space-y-6 border border-gold/15 shadow-sm hover:shadow-md hover:border-gold/30 transition-all duration-500"
               >
                 <h3 className="text-3xl font-medium text-navy-900 tracking-tight">
                   {item.title}

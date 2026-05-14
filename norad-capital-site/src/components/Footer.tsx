@@ -5,10 +5,10 @@ export default function Footer() {
   const { footer } = siteContent
 
   return (
-    <footer className="bg-navy-950 text-navy-300 py-16 px-6">
+    <footer className="bg-navy-900 text-navy-300 py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="w-12 h-0.5 bg-gold mb-8" />
-        <div className="bg-white rounded-xl p-4 inline-block mb-6">
+        <div className="w-12 h-0.5 bg-gold mb-8 rounded-full" />
+        <div className="bg-white rounded-xl p-4 inline-block mb-6 shadow-sm">
           <img
             src={logoSrc}
             alt="Norad Capital"

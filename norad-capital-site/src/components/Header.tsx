@@ -25,10 +25,10 @@ export default function Header() {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm transition-colors duration-200 ${
+              className={`text-sm transition-all duration-300 pb-1 border-b-2 ${
                 pathname === item.path
-                  ? "text-navy-900 font-medium"
-                  : "text-navy-400 hover:text-navy-900"
+                  ? "text-gold border-gold font-medium"
+                  : "text-navy-400 border-transparent hover:text-gold hover:border-gold/40"
               }`}
             >
               {item.label}
@@ -37,7 +37,7 @@ export default function Header() {
         </nav>
 
         <button
-          className="md:hidden text-navy-900"
+          className="md:hidden text-gold"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menu"
         >
@@ -52,10 +52,10 @@ export default function Header() {
               key={item.path}
               to={item.path}
               onClick={() => setOpen(false)}
-              className={`text-base transition-colors ${
+              className={`text-base transition-colors duration-300 ${
                 pathname === item.path
-                  ? "text-navy-900 font-medium"
-                  : "text-navy-400 hover:text-navy-900"
+                  ? "text-gold font-medium"
+                  : "text-navy-400 hover:text-gold"
               }`}
             >
               {item.label}
