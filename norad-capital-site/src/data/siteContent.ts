@@ -219,33 +219,6 @@ export const siteContent = {
     },
   },
 
-  parceiros: {
-    title: "Parceiros Estratégicos",
-    subtitle:
-      "Instituições financeiras de referência que confiam na Norad Capital.",
-    text: "Mantemos relações institucionais com algumas das mais sólidas instituições financeiras do país, garantindo às operações o respaldo e a segurança dos maiores players do mercado de crédito imobiliário.",
-    items: [
-      {
-        name: "C6 Bank",
-        logo: "/C6Bank.png",
-        description:
-          "Banco múltiplo com presença nacional, referência em soluções digitais e crédito estruturado.",
-      },
-      {
-        name: "CashMe",
-        logo: "/Cashme.png",
-        description:
-          "Plataforma especializada em crédito com garantia de imóvel, com tecnologia e agilidade na origem de operações.",
-      },
-      {
-        name: "Creditas",
-        logo: "/Crediatas.jpeg",
-        description:
-          "Maior plataforma de crédito com garantia da América Latina, referência em inovação e segurança.",
-      },
-    ],
-  },
-
   footer: {
     rights: "© 2025 Norad Capital. Todos os direitos reservados.",
     disclaimer:
