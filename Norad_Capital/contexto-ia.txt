@@ -105,15 +105,11 @@ Norad Capital connects individuals and companies to large banks and specialized 
 
 The company operates nationwide in Brazil, with online and in-person service and an office in São Paulo.
 
-## Partner Confidentiality
+## Partner Institutions
 
-Some internal documents mention partner institutions such as C6 Bank, Creditas and CashMe.
+The website displays the logos of partner institutions such as C6 Bank, Creditas and CashMe on the "Parceiros Estratégicos" section.
 
-These partner names are internal context only.
-
-Do not mention partner names on the public website.
-
-Do not use partner logos.
+These are displayed exclusively as institutional brand references.
 
 Do not expose internal partner materials, contracts, commissions, checklists, tax codes, operational rules, personal data, private emails or internal contacts.
 

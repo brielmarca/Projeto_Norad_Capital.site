@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight, Building2, Home as HomeIcon } from "lucide-react"
+import { siteContent } from "../data/siteContent"
 
 const WHATSAPP_NUMBER = "5511999999999"
 
@@ -34,6 +35,7 @@ const solutions = [
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"pessoa" | "empresa">("pessoa")
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}`
+  const { parceiros } = siteContent
 
   return (
     <>
@@ -246,6 +248,60 @@ export default function Home() {
             taxas, prazos, valores e demais condições estão sujeitos à análise
             e aos critérios das instituições financeiras parceiras.
           </p>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section className="py-32 px-6 bg-navy-900">
+        <div className="max-w-6xl mx-auto space-y-16">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease }}
+            className="max-w-3xl mx-auto text-center space-y-4"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white leading-tight">
+              {parceiros.title}
+            </h2>
+            <p className="text-lg text-gold font-light tracking-wide">
+              {parceiros.subtitle}
+            </p>
+            <p className="text-navy-300 leading-relaxed max-w-2xl mx-auto">
+              {parceiros.text}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {parceiros.items.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, delay: i * 0.15, ease }}
+                className="group relative"
+              >
+                <div className="relative border border-white/10 rounded-2xl p-8 h-full flex flex-col items-center text-center space-y-5 bg-white/[0.03] backdrop-blur-sm transition-all duration-500 hover:border-gold/40 hover:bg-white/[0.06] hover:shadow-[0_0_40px_-12px_rgba(201,168,76,0.15)]">
+                  <div className="w-full h-24 flex items-center justify-center">
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      className="max-h-20 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-white/90">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-navy-300 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
