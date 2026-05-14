@@ -1,41 +1,34 @@
 # Norad Capital
 
-Repositório oficial da Norad Capital — fintech brasileira especializada em intermediação de Home Equity e Crédito Imobiliário.
+Official repository for the Norad Capital institutional website.
 
-## Estrutura
+Norad Capital is a Brazilian fintech specialized in the intermediation, structuring and advisory support of Home Equity and Real Estate Credit operations.
+
+## Structure
 
 ```
 /
-├── Norad_Capital/              # Documentos de contexto e diretrizes do projeto
-│   └── contexto-ia.txt         # Contexto completo para desenvolvimento do site
-├── norad-capital-site/         # Site institucional (Vite + React + TypeScript)
-├── Apresentacao*.pdf           # Apresentações de produtos e parcerias
-├── Parcerias*.pdf              # Documentos de parcerias (Creditas, CashMe, C6 Bank)
-├── checklist_de_documentos_*.pdf  # Checklists de documentos PF/PJ
-└── package.json                # Dependências raiz (se aplicável)
+├── Norad_Capital/              # Project context and development guidelines
+│   └── contexto-ia.txt         # Full AI context for website development
+├── norad-capital-site/         # Institutional website (Vite + React + TypeScript)
+└── *.pdf / *.docx / *.jpeg     # Internal business documents (not for the website)
 ```
 
-## Site Institucional
+## Website
 
-O site da Norad Capital (`norad-capital-site/`) é uma landing page institucional premium, inspirada no minimalismo Apple, construída com:
+The website (`norad-capital-site/`) is a premium institutional frontend built with Vite, React, TypeScript, Tailwind CSS v4, Framer Motion, Lucide React and React Router DOM.
 
-- **Vite** + **React** + **TypeScript**
-- **Tailwind CSS** (v4)
-- **Framer Motion** (animações)
-- **Lucide React** (ícones)
-- **react-router-dom** (7 páginas)
-
-### Páginas
+### Pages
 
 - `/` — Home
-- `/sobre` — Sobre a Norad Capital
-- `/solucoes` — Soluções
+- `/sobre` — About Norad Capital
+- `/solucoes` — Solutions
 - `/home-equity` — Home Equity
-- `/credito-imobiliario` — Crédito Imobiliário
-- `/processo` — Processo de intermediação
-- `/contato` — Contato
+- `/credito-imobiliario` — Real Estate Credit
+- `/processo` — Intermediation process
+- `/contato` — Contact
 
-### Desenvolvimento
+### Development
 
 ```bash
 cd norad-capital-site
@@ -43,12 +36,10 @@ npm install
 npm run dev
 ```
 
-## Business
+## Important
 
-A Norad Capital conecta pessoas e empresas a grandes bancos e instituições financeiras por meio de intermediação especializada em crédito com garantia de imóvel. Atuação nacional com escritório em São Paulo.
+This is a frontend-only, premium institutional website. No backend, login, database, authentication or loan processing.
 
-### Parceiros (não divulgados no site)
+All visible content must be in Brazilian Portuguese (PT-BR).
 
-- C6 Bank (Home Equity)
-- Creditas (Home Equity)
-- CashMe
+**Full project context available at:** `Norad_Capital/contexto-ia.txt`

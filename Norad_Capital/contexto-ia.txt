@@ -1,231 +1,208 @@
-PROJECT CONTEXT — NORAD CAPITAL
+# Norad Capital — Project Context
 
-Project name:
-Norad Capital Website
+Official repository for the Norad Capital institutional website.
 
-Final website language:
-Brazilian Portuguese (PT-BR)
+Norad Capital is a Brazilian fintech specialized in the intermediation, structuring and advisory support of Home Equity and Real Estate Credit operations.
 
-Code language:
-English is allowed for components, variables, functions, folders and files.
-All visible website content must be in Brazilian Portuguese.
+## Final Website Language
 
-Project type:
-Frontend-only premium institutional landing page.
+All visible website content must be in Brazilian Portuguese (PT-BR).
 
-Main goal:
-Create a premium, minimal and elegant website for Norad Capital, focused on presenting the company, explaining its credit solutions, building trust and directing users to WhatsApp as the first contact channel.
+Code, variables, components, folders and file names can be in English.
 
-The website must NOT be a loan application platform.
+## Tech Stack
 
-Company:
-Norad Capital is a Brazilian fintech focused on credit solutions, specializing in the intermediation of Home Equity and Real Estate Credit.
+The website is built with:
 
-Positioning:
-Norad Capital should be perceived as a premium fintech of real estate credit solutions, with a consultative, discreet, strategic and trustworthy approach.
+- Vite
+- React
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Lucide React
+- React Router DOM
 
-Core business:
+## Website Type
+
+This is a premium institutional website.
+
+It is not a loan application platform.
+
+The project must remain frontend-only.
+
+Do not add:
+
+- Backend
+- Login
+- Dashboard
+- Database
+- Authentication
+- Client area
+- Admin panel
+- Loan approval system
+- Document upload
+- Real financial simulation
+- Bank integration
+- Partner portal
+
+## Pages
+
+Current routes:
+
+- `/` — Home
+- `/sobre` — Sobre a Norad Capital
+- `/solucoes` — Soluções
+- `/home-equity` — Home Equity
+- `/credito-imobiliario` — Crédito Imobiliário
+- `/processo` — Processo de intermediação
+- `/contato` — Contato
+
+Do not remove or rename routes unless explicitly requested.
+
+## Brand Positioning
+
+Norad Capital should feel like a premium fintech brand.
+
+The tone must be:
+
+- Premium
+- Institutional
+- Strategic
+- Minimalist
+- Trustworthy
+- Discreet
+- Consultative
+- Professional
+
+Visual direction:
+
+- Apple-inspired minimalism
+- Clean layout
+- Strong typography
+- Large spacing
+- Few elements per section
+- Calm animations
+- Premium hierarchy
+- Deep navy, white, soft gray and subtle gold accents
+
+Important:
+
+Do not copy Apple branding, layout, icons, typography, assets or exact design.
+Use only Apple-inspired principles: clarity, spacing, minimalism, elegance and premium presentation.
+
+## Business Context
+
+Norad Capital operates in:
+
 - Home Equity
-- Real Estate Credit
-- Credit intermediation
-- Real estate-backed credit solutions
+- Crédito Imobiliário
+- Crédito com garantia de imóvel
+- Intermediação de crédito
+- Estruturação de operações imobiliárias
+- Assessoria e acompanhamento consultivo
 
-Target audience:
-- Individuals
-- Entrepreneurs
-- Companies
-- High-income clients
-- Clients interested in structured real estate credit solutions
+Norad Capital connects individuals and companies to large banks and specialized financial institutions through a consultative credit intermediation process.
 
-Geographic presence:
-Norad Capital operates across Brazil.
-The service can be online and in-person.
-The company has an office in São Paulo.
+The company operates nationwide in Brazil, with online and in-person service and an office in São Paulo.
 
-Partner communication:
-Do not mention specific bank names.
-Do not use bank logos.
-Do not expose partner names.
-Use terms such as:
+## Partner Confidentiality
+
+Some internal documents mention partner institutions such as C6 Bank, Creditas and CashMe.
+
+These partner names are internal context only.
+
+Do not mention partner names on the public website.
+
+Do not use partner logos.
+
+Do not expose internal partner materials, contracts, commissions, checklists, tax codes, operational rules, personal data, private emails or internal contacts.
+
+Public website wording should use generic terms such as:
+
 - grandes bancos
 - instituições financeiras
 - instituições parceiras
 - instituições financeiras especializadas
 - mercado financeiro
 
-Main conversion:
-The main action should be contact through WhatsApp.
-After the first contact, the company can schedule a conversation.
+## Main Conversion
 
-Main CTA examples:
+The main conversion is WhatsApp contact.
+
+Preferred CTA examples:
+
 - Falar com especialista
 - Iniciar atendimento
 - Agendar uma conversa
 - Conhecer soluções
 
 Avoid CTA examples:
+
 - Pedir empréstimo
 - Aprovação imediata
 - Dinheiro na hora
 - Crédito aprovado
 - Simule agora
 
-Visual direction:
-Apple-inspired premium minimalism.
+## Key Public Messages
 
-Important:
-Do not copy Apple branding, layout, assets, icons, typography or exact design.
-Use only the design principles:
-- minimalism
-- large typography
-- lots of spacing
-- short strong headlines
-- clean sections
-- smooth animations
-- premium visual hierarchy
-- one main idea per section
-- high-end presentation
+Main headline direction:
 
-Visual style:
-- Premium fintech
-- Elegant
-- Minimal
-- Institutional
-- Trustworthy
-- Clean
-- Sophisticated
-- Responsive
-- Modern
-- Discreet
+Crédito imobiliário estruturado com inteligência, clareza e acompanhamento especializado.
 
-Suggested colors:
-- White
-- Soft black
-- Dark navy
-- Light gray
-- Subtle gold accents
+Brand phrase:
 
-Avoid:
-- Generic loan website style
-- Popular/aggressive financial design
-- Too many colors
-- Heavy gradients
-- Loud buttons
-- Overloaded sections
-- Stock-photo-heavy layout
-- Cheap-looking cards
-- Excessive icons
+Capital estratégico para quem construiu valor.
 
-Tech stack:
-Use:
-- Vite
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Lucide React
+Supporting message:
 
-Optional:
-- React Hook Form
-- Zod
-
-Do NOT create:
-- Backend
-- Login
-- Dashboard
-- Database
-- Authentication
-- User area
-- Loan approval system
-- Document upload
-- Real simulation system
-- Bank integration
-- Partner portal
-- Admin panel
-
-MVP structure:
-The MVP should be a one-page landing page.
-
-Sections:
-- Header
-- Início
-- Sobre / Norad Capital
-- Soluções
-- Home Equity
-- Crédito Imobiliário
-- Processo
-- Presença Nacional
-- Transparência
-- Dúvidas
-- Contato
-- Footer
-
-Suggested menu in PT-BR:
-- Início
-- Soluções
-- Processo
-- Presença Nacional
-- Dúvidas
-- Contato
-
-Main headline:
-Crédito imobiliário com inteligência.
-
-Supporting text:
 A Norad Capital conecta pessoas e empresas a grandes bancos e instituições financeiras por meio de uma intermediação especializada em Home Equity e Crédito Imobiliário.
 
-About text:
+About message:
+
 A Norad Capital é uma fintech brasileira especializada na intermediação de Home Equity e Crédito Imobiliário. Com atuação nacional e escritório em São Paulo, conduzimos cada operação com clareza, discrição e acompanhamento próximo.
 
 Home Equity explanation:
+
 Home Equity é uma solução de crédito com garantia de imóvel. Nessa modalidade, o cliente pode utilizar um imóvel como garantia para acessar crédito com prazos mais longos e condições potencialmente mais competitivas.
 
 Crédito Imobiliário explanation:
+
 O Crédito Imobiliário é voltado para aquisição, financiamento ou estruturação de operações relacionadas a imóveis. A Norad Capital auxilia o cliente na busca por alternativas junto a grandes bancos e instituições financeiras.
 
-Process steps:
-1. Conversa inicial
-Entendemos o perfil, o objetivo e a necessidade do cliente.
+## Process Message
 
-2. Estruturação da operação
-Organizamos as informações e avaliamos o caminho mais adequado.
+Use a simple, premium process:
+
+1. Conversa inicial
+Entendemos o perfil, o objetivo e a necessidade da operação.
+
+2. Estruturação
+Organizamos as informações relevantes e avaliamos o melhor caminho para o caso.
 
 3. Encaminhamento institucional
-Direcionamos a operação para instituições financeiras com foco em crédito imobiliário.
+Direcionamos a operação para instituições financeiras especializadas em crédito imobiliário.
 
 4. Acompanhamento
-Acompanhamos as etapas de análise, documentação, avaliação e formalização.
+Apoiamos o cliente nas etapas de análise, documentação, avaliação da garantia e formalização.
 
-National presence text:
-Atuação em todo o Brasil, com atendimento online, presencial e escritório em São Paulo.
+5. Condições finais
+A aprovação, taxas, prazos e valores dependem exclusivamente dos critérios da instituição financeira.
 
-Mandatory disclaimer:
+## Mandatory Disclaimer
+
+Always preserve this disclaimer where legally relevant:
+
 A Norad Capital atua como intermediadora de crédito. A aprovação, taxas, prazos, valores e demais condições estão sujeitos à análise e aos critérios das instituições financeiras parceiras.
 
 Additional transparency text:
+
 As informações apresentadas neste site têm caráter institucional e informativo. A contratação de qualquer operação depende de análise de crédito, documentação, avaliação da garantia e aprovação da instituição financeira responsável.
 
-FAQ questions:
-- A Norad Capital é um banco?
-- O que é Home Equity?
-- O que é Crédito Imobiliário?
-- A aprovação é garantida?
-- A Norad Capital atende todo o Brasil?
-- Como funciona o primeiro contato?
-- Os bancos parceiros são divulgados?
-
-FAQ answers must be short, clear and legally safe.
-
-Tone of voice:
-- Premium
-- Clear
-- Institutional
-- Direct
-- Elegant
-- Consultative
-- Confident but not exaggerated
+## Words and Claims to Avoid
 
 Do not use:
+
 - empréstimo rápido
 - dinheiro na hora
 - aprovação garantida
@@ -234,53 +211,35 @@ Do not use:
 - sem burocracia
 - negativado
 - liberação imediata
+- juros baixos as a fixed claim
 - promessa de aprovação
 - linguagem agressiva de vendas
 
-Content rules:
-- Keep copy short and strong.
-- Use one main message per section.
-- Prioritize clarity and trust.
-- Do not overload sections with text.
-- Do not mention specific partner banks.
-- Do not include fake numbers.
-- Do not invent certifications, awards or partnerships.
-- If numbers are needed, use placeholders until confirmed.
+## Development Rules
 
-Development rules:
-- Build clean reusable components.
-- Keep files organized.
-- Use responsive design from the start.
-- Use semantic HTML.
-- Keep accessibility in mind.
-- Use smooth but subtle animations.
-- Make small, safe, incremental changes.
-- Do not redesign everything unless explicitly requested.
-- Do not add unnecessary dependencies.
-- Do not create backend logic.
+When making changes:
 
-Recommended folder structure:
-src/
-  assets/
-  components/
-    Header.tsx
-    Footer.tsx
-    SectionTitle.tsx
-    WhatsAppButton.tsx
-  sections/
-    IntroSection.tsx
-    AboutSection.tsx
-    SolutionsSection.tsx
-    ProcessSection.tsx
-    NationalPresenceSection.tsx
-    TransparencySection.tsx
-    FAQSection.tsx
-    ContactSection.tsx
-  data/
-    siteContent.ts
-  App.tsx
-  main.tsx
-  index.css
+- Make small, controlled and incremental improvements.
+- Do not rebuild the entire site unless explicitly requested.
+- Do not redesign everything at once.
+- Preserve existing routes.
+- Preserve existing Header and Footer unless the task is specifically about them.
+- Preserve the official Norad logo.
+- Preserve PT-BR content.
+- Preserve legal disclaimers.
+- Keep the website responsive.
+- Keep the frontend-only architecture.
+- Avoid unnecessary dependencies.
+- Ensure the project runs with `npm run dev`.
 
-Final result:
-A premium Apple-inspired institutional landing page in PT-BR for Norad Capital, focused on Home Equity and Real Estate Credit intermediation, with national presence in Brazil and WhatsApp as the main conversion channel.
+## Current Design Goal
+
+The website already exists.
+
+Future work should refine the current project, not recreate it.
+
+Current priority:
+
+- Improve the Home page storytelling while keeping the Apple-inspired premium minimalist style.
+- Keep the design calm, clean and institutional.
+- Avoid random stock images, fake placeholders, glow effects, loud gradients or excessive animations.
