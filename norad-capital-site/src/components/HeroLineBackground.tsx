@@ -44,9 +44,11 @@ const paths: Record<Variant, { gold: string; navy: string }> = {
 
 interface Props {
   variant?: Variant
+  goldOpacity?: number
+  navyOpacity?: number
 }
 
-export default function HeroLineBackground({ variant = "growth" }: Props) {
+export default function HeroLineBackground({ variant = "growth", goldOpacity = 0.12, navyOpacity = 0.06 }: Props) {
   const shouldReduceMotion = useReducedMotion()
   const { scrollYProgress } = useScroll()
   const yGold = useTransform(scrollYProgress, [0, 0.2], [0, shouldReduceMotion ? 0 : 50])
@@ -69,7 +71,7 @@ export default function HeroLineBackground({ variant = "growth" }: Props) {
           strokeWidth="1.5"
           vectorEffect="non-scaling-stroke"
           strokeLinecap="round"
-          opacity="0.12"
+          opacity={goldOpacity}
           style={{ translateY: yGold }}
           initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
           animate={{ pathLength: 1 }}
@@ -81,7 +83,7 @@ export default function HeroLineBackground({ variant = "growth" }: Props) {
           strokeWidth="1"
           vectorEffect="non-scaling-stroke"
           strokeLinecap="round"
-          opacity="0.06"
+          opacity={navyOpacity}
           style={{ translateY: yNavy }}
           initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
           animate={{ pathLength: 1 }}
