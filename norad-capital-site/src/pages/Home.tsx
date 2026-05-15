@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight, Building2, Home as HomeIcon } from "lucide-react"
+import phoneMockup from "../assets/celular-com-site.png"
 import { siteContent } from "../data/siteContent"
 import HeroLineBackground from "../components/HeroLineBackground"
 
@@ -14,6 +15,15 @@ const storyItems = [
   { number: "02", title: "A estratégia.", text: "Analisamos seu perfil e o momento certo para a decisão." },
   { number: "03", title: "A estruturação.", text: "Organizamos cada detalhe e direcionamos a instituição ideal." },
   { number: "04", title: "O acompanhamento.", text: "Suporte consultivo da análise à formalização." },
+]
+
+const comparisonItems = [
+  { label: "Clareza na estruturação", market: 45, norad: 92 },
+  { label: "Acompanhamento consultivo", market: 40, norad: 90 },
+  { label: "Discrição institucional", market: 50, norad: 88 },
+  { label: "Visão patrimonial", market: 38, norad: 94 },
+  { label: "Direcionamento adequado", market: 42, norad: 89 },
+  { label: "Organização das informações", market: 44, norad: 91 },
 ]
 
 const solutions = [
@@ -147,7 +157,187 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. SOLUTIONS PREVIEW */}
+      {/* 3. WHATSAPP CONTACT */}
+      <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease }}
+              className="space-y-6"
+            >
+              <p className="text-sm text-gold font-medium tracking-[0.2em] uppercase">
+                Primeiro contato
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-navy-900 leading-[1.15]">
+                Sua operação começa em uma conversa.
+              </h2>
+              <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-md">
+                Do primeiro contato à estruturação da proposta, a Norad Capital
+                combina atendimento digital, visão estratégica e acompanhamento
+                consultivo para conduzir operações imobiliárias com clareza.
+              </p>
+              <div className="pt-2">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-navy-900 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-navy-800 transition-all duration-300"
+                >
+                  Falar com especialista
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15, ease }}
+              className="flex justify-center md:justify-end"
+            >
+              <img
+                src={phoneMockup}
+                alt="Norad Capital no WhatsApp"
+                className="w-full max-w-xs md:max-w-sm h-auto"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. COMPARISON */}
+      <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-900">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease }}
+            className="text-center space-y-4 mb-12 md:mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white leading-[1.15]">
+              Uma abordagem mais estratégica para crédito imobiliário.
+            </h2>
+            <p className="text-base md:text-lg text-navy-300 leading-relaxed max-w-2xl mx-auto">
+              Enquanto o mercado tende a tratar crédito como produto, a Norad
+              estrutura cada operação como uma decisão patrimonial.
+            </p>
+          </motion.div>
+
+          {/* Chart card */}
+          <div className="bg-navy-800/50 rounded-2xl border border-white/[0.06] p-6 md:p-10">
+            {/* Legend */}
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-8 md:mb-12">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-5 rounded-sm bg-navy-400/40" />
+                <span className="text-xs text-navy-300 tracking-wide">
+                  Mercado
+                </span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-5 rounded-sm bg-gold" />
+                <span className="text-xs text-navy-300 tracking-wide">
+                  Estruturação Norad
+                </span>
+              </div>
+            </div>
+
+            {/* Chart — scrollable on mobile */}
+            <div className="overflow-x-auto pb-2 -mx-2 px-2">
+              <div className="min-w-[540px]">
+                {/* Grid lines */}
+                <div className="relative">
+                  {/* 100% line */}
+                  <div className="absolute left-0 right-0 top-0 flex items-center gap-1">
+                    <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">100</span>
+                    <div className="flex-1 border-t border-white/[0.04]" />
+                  </div>
+                  {/* 75% line */}
+                  <div className="absolute left-0 right-0 flex items-center gap-1" style={{ top: "25%" }}>
+                    <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">75</span>
+                    <div className="flex-1 border-t border-white/[0.04]" />
+                  </div>
+                  {/* 50% line */}
+                  <div className="absolute left-0 right-0 flex items-center gap-1" style={{ top: "50%" }}>
+                    <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">50</span>
+                    <div className="flex-1 border-t border-white/[0.04]" />
+                  </div>
+                  {/* 25% line */}
+                  <div className="absolute left-0 right-0 flex items-center gap-1" style={{ top: "75%" }}>
+                    <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">25</span>
+                    <div className="flex-1 border-t border-white/[0.04]" />
+                  </div>
+
+                  {/* Bar groups */}
+                  <div className="relative flex items-end justify-around pt-8 pb-16 pl-10" style={{ height: "280px" }}>
+                    {comparisonItems.map((item, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: i * 0.1, ease }}
+                        className="flex flex-col items-center gap-2"
+                      >
+                        {/* Bars */}
+                        <div className="flex items-end gap-1.5" style={{ height: "240px" }}>
+                          {/* Market bar */}
+                          <div className="flex flex-col items-center justify-end relative" style={{ width: "28px", height: "100%" }}>
+                            <span className="text-[10px] text-navy-400 font-medium tabular-nums mb-1">
+                              {item.market}%
+                            </span>
+                            <motion.div
+                              initial={{ height: 0 }}
+                              whileInView={{ height: `${item.market}%` }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.8, delay: i * 0.1 + 0.1, ease }}
+                              className="w-full rounded-t-sm bg-navy-400/40 absolute bottom-0"
+                            />
+                          </div>
+                          {/* Norad bar */}
+                          <div className="flex flex-col items-center justify-end relative" style={{ width: "28px", height: "100%" }}>
+                            <span className="text-[10px] text-gold font-medium tabular-nums mb-1">
+                              {item.norad}%
+                            </span>
+                            <motion.div
+                              initial={{ height: 0 }}
+                              whileInView={{ height: `${item.norad}%` }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.8, delay: i * 0.1 + 0.2, ease }}
+                              className="w-full rounded-t-sm bg-gold absolute bottom-0"
+                            />
+                          </div>
+                        </div>
+                        {/* Label */}
+                        <p className="text-[11px] text-navy-300 text-center leading-tight max-w-[80px] mt-2">
+                          {item.label}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-xs text-navy-400 mt-8 md:mt-10 text-center leading-relaxed"
+          >
+            Índices conceituais para representar a diferença entre uma abordagem
+            genérica de mercado e a estruturação consultiva da Norad Capital.
+            Não representam estatísticas reais de desempenho.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* 5. SOLUTIONS PREVIEW */}
       <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-50">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
@@ -192,7 +382,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. AUDIENCE SEGMENTATION */}
+      {/* 6. AUDIENCE SEGMENTATION */}
       <section className="py-16 md:py-24 lg:py-32 px-6">
         <div className="max-w-3xl mx-auto text-center space-y-12">
           <motion.h2
@@ -270,7 +460,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. LEGAL TRANSPARENCY */}
+      {/* 7. LEGAL TRANSPARENCY */}
       <section className="py-16 px-6 border-t border-navy-100">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs md:text-sm text-navy-300 leading-relaxed">
@@ -281,7 +471,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PARTNERS */}
+      {/* 8. PARTNERS */}
       <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-900">
         <div className="max-w-6xl mx-auto space-y-16">
           <motion.div
@@ -335,7 +525,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. FINAL CTA */}
+      {/* 9. FINAL CTA */}
       <section className="py-16 md:py-24 lg:py-32 px-6 border-t border-navy-100">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
