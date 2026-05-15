@@ -131,6 +131,7 @@ Preferred CTA examples:
 - Iniciar atendimento
 - Agendar uma conversa
 - Conhecer soluções
+- Iniciar análise estratégica
 
 Avoid CTA examples:
 
@@ -139,6 +140,7 @@ Avoid CTA examples:
 - Dinheiro na hora
 - Crédito aprovado
 - Simule agora
+- Chama no Zap
 
 ## Key Public Messages
 
@@ -228,6 +230,41 @@ When making changes:
 - Avoid unnecessary dependencies.
 - Ensure the project runs with `npm run dev`.
 
+## Content Architecture
+
+All visible text content is centralized in `src/data/siteContent.ts`.
+Components import from this file — never hardcode text in components.
+
+## Hero Background System
+
+Hero sections use `HeroLineBackground` component with SVG line-chart paths.
+
+- Lines are subtle: gold opacity 0.12, navy opacity 0.06
+- Positioned behind content with `z-0` / `z-10` layering
+- `pointer-events-none` on all decorative elements
+- `preserveAspectRatio="xMidYMid slice"` for full coverage
+- Each page has its own variant (growth, institutional, solutions, equity, realestate, process, contact)
+
+## Mobile-First Rules
+
+- Hero backgrounds must never overlap content on mobile
+- Headlines scale: `text-3xl` mobile → `text-7xl` desktop
+- Decorative elements should be subtler or hidden on small screens
+- Content wrapper always has `relative z-10`
+- No oversized visuals invading the Header area
+
+## Deployment
+
+Production: Cloudflare Pages
+URL: https://norad-capital-site.pages.dev/
+
+Deploy command:
+```bash
+cd norad-capital-site
+npm run build
+npx wrangler pages deploy dist --project-name norad-capital-site --branch production --commit-dirty=true
+```
+
 ## Current Design Goal
 
 The website already exists.
@@ -236,6 +273,6 @@ Future work should refine the current project, not recreate it.
 
 Current priority:
 
-- Improve the Home page storytelling while keeping the Apple-inspired premium minimalist style.
 - Keep the design calm, clean and institutional.
 - Avoid random stock images, fake placeholders, glow effects, loud gradients or excessive animations.
+- Maintain Apple-inspired premium minimalist style across all pages.

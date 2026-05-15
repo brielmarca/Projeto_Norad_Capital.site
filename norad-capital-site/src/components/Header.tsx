@@ -11,12 +11,12 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-navy-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between">
         <Link to="/" className="shrink-0">
           <img
             src={logoSrc}
             alt="Norad Capital"
-            className="h-8 sm:h-9 md:h-10 w-auto"
+            className="h-7 sm:h-8 md:h-9 w-auto object-contain"
           />
         </Link>
 
@@ -37,11 +37,11 @@ export default function Header() {
         </nav>
 
         <button
-          className="md:hidden text-navy-900 p-3"
+          className="md:hidden text-navy-900 p-2 shrink-0"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 

@@ -16,14 +16,14 @@ export default function HomeEquity() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20">
         <HeroLineBackground variant="equity" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 md:space-y-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="text-sm md:text-base text-gold font-medium tracking-[0.2em] uppercase"
+            className="text-xs sm:text-sm md:text-base text-gold font-medium tracking-[0.2em] uppercase"
           >
             {homeEquity.subtitle}
           </motion.p>
@@ -31,7 +31,7 @@ export default function HomeEquity() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-navy-900 leading-[1.15] sm:leading-[1.05] md:leading-[0.95]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.05] lg:leading-[0.95]"
           >
             {homeEquity.title}
           </motion.h1>
@@ -39,7 +39,7 @@ export default function HomeEquity() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease }}
-            className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl mx-auto"
           >
             {homeEquity.intro}
           </motion.p>
@@ -47,7 +47,7 @@ export default function HomeEquity() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2"
           >
             <WhatsAppButton
               number={WHATSAPP_NUMBER}

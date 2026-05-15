@@ -54,7 +54,7 @@ export default function Footer() {
             <img
               src={logoSrc}
               alt="Norad Capital"
-              className="h-8 sm:h-9 md:h-10 w-auto"
+              className="h-7 sm:h-8 md:h-9 w-auto object-contain"
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <p className="text-sm text-navy-400 leading-relaxed max-w-xs">
