@@ -75,10 +75,12 @@ export const siteContent = {
       "Com escritório em São Paulo, oferecemos atendimento presencial e suporte digital em todo o território nacional. Acreditamos que proximidade e clareza são a base de uma relação de confiança.",
     ],
     presence: {
-      title: "Presença Nacional",
-      paragraphs: [
-        "Com atuação em todo o território nacional, a Norad Capital está preparada para atender clientes em todas as regiões do Brasil.",
-        "Nossa estrutura digital e rede de correspondentes estratégicos garantem capilaridade e proximidade com cada cliente, onde ele estiver.",
+      title: "Presença nacional, estrutura em São Paulo.",
+      text: "Com escritório em São Paulo e atuação em todo o Brasil, a Norad Capital combina presença institucional, relacionamento de mercado e atendimento consultivo para estruturar operações imobiliárias com clareza e estratégia.",
+      points: [
+        { label: "Atuação nacional", description: "Operações em todo o território brasileiro." },
+        { label: "Escritório em São Paulo", description: "Base institucional na capital financeira do país." },
+        { label: "Atendimento online e presencial", description: "Flexibilidade e proximidade em cada operação." },
       ],
     },
     office: {
@@ -112,46 +114,57 @@ export const siteContent = {
 
   homeEquity: {
     title: "Home Equity",
+    subtitle: "Crédito com garantia imobiliária",
     intro:
-      "Crédito com garantia de imóvel para projetos consistentes, com taxas reduzidas e prazos estendidos.",
+      "Transforme seu patrimônio imobiliário em capital estratégico. O Home Equity permite utilizar seu imóvel como garantia para acessar crédito com condições privilegiadas.",
     sections: [
       {
-        title: "O que é",
-        text: "Home Equity é uma modalidade de crédito na qual você utiliza seu imóvel como garantia. Isso permite acesso a taxas significativamente mais baixas e prazos mais longos se comparados a outras linhas de crédito pessoal.",
+        title: "O que é o Home Equity",
+        text: "O Home Equity é uma modalidade de crédito com garantia imobiliária. Nessa operação, o cliente utiliza um imóvel de sua propriedade como garantia para acessar crédito com prazos mais longos e condições potencialmente mais competitivas do que outras linhas de crédito pessoal.",
       },
       {
-        title: "Como funciona",
-        text: "Após uma análise criteriosa do seu perfil e do imóvel, apresentamos as melhores condições disponíveis no mercado. Todo o processo é conduzido com total transparência — desde a avaliação do imóvel até a formalização do contrato.",
+        title: "Uso estratégico do patrimônio",
+        text: "Seu imóvel é um ativo que pode ser convertido em capital estratégico. Seja para expandir um negócio, reestruturar operações ou realizar projetos de longo prazo, o Home Equity oferece uma alternativa estruturada para quem já construiu valor e busca novas possibilidades.",
       },
       {
-        title: "Intermediação Consultiva",
-        text: "Atuamos como intermediadores especializados, conectando você às instituições financeiras parceiras. Não fazemos promessas de aprovação — apresentamos as condições reais e você decide com todas as informações em mãos.",
+        title: "Estruturação de crédito",
+        text: "Após uma análise criteriosa do seu perfil e do imóvel, estruturamos a operação e direcionamos às instituições financeiras especializadas. Todo o processo é conduzido com transparência — da avaliação do patrimônio à formalização.",
+      },
+      {
+        title: "Acompanhamento consultivo",
+        text: "A Norad Capital atua como intermediadora especializada, conectando você às instituições financeiras mais adequadas ao seu perfil. Acompanhamos cada etapa com postura consultiva, para que você tenha clareza e suporte do início ao fim.",
       },
     ],
-    cta: "Falar sobre Home Equity",
+    cta: "Falar com especialista",
+    ctaSecondary: "Iniciar análise estratégica",
     disclaimer:
       "A Norad Capital atua como intermediadora de crédito. A aprovação, taxas, prazos, valores e demais condições estão sujeitos à análise e aos critérios das instituições financeiras parceiras.",
   },
 
   creditoImobiliario: {
     title: "Crédito Imobiliário",
+    subtitle: "Crédito imobiliário estruturado",
     intro:
-      "Soluções completas para aquisição, construção ou reforma de imóveis, com acompanhamento especializado em cada etapa.",
+      "Soluções completas para aquisição, financiamento e estruturação de operações imobiliárias, com acompanhamento consultivo e clareza em cada etapa.",
     sections: [
       {
-        title: "Aquisição de Imóveis",
-        text: "Estruturamos o financiamento para compra de imóveis residenciais e comerciais. Analisamos as melhores condições do mercado e apresentamos opções claras para sua decisão.",
+        title: "Aquisição de imóveis",
+        text: "Estruturamos o financiamento para compra de imóveis residenciais e comerciais. Analisamos as melhores condições junto a instituições financeiras especializadas e apresentamos opções claras para sua decisão.",
       },
       {
-        title: "Construção e Reforma",
-        text: "Linhas de crédito específicas para construção ou reforma de imóveis, com condições adequadas a cada tipo de projeto e etapa da obra.",
+        title: "Financiamento e construção",
+        text: "Linhas de crédito específicas para construção ou reforma de imóveis, com condições adequadas a cada tipo de projeto e etapa da obra. Tudo pensado para alinhar o crédito à sua estratégia patrimonial.",
       },
       {
-        title: "Intermediação Especializada",
-        text: "Coordenamos todo o processo junto às instituições financeiras, desde a análise de viabilidade até a formalização. Acompanhamos cada etapa para garantir que você tenha suporte em todos os momentos.",
+        title: "Estruturação de operações",
+        text: "Coordenamos todo o processo junto às instituições financeiras, desde a análise de viabilidade até a formalização. Organizamos informações, documentação e direcionamos a instituição mais adequada ao seu perfil.",
+      },
+      {
+        title: "Acompanhamento consultivo",
+        text: "A Norad Capital atua como intermediadora especializada, oferecendo suporte e clareza em cada etapa. Acompanhamos o processo do início ao fim, para que você tenha segurança e informação em todas as decisões.",
       },
     ],
-    cta: "Falar sobre Crédito Imobiliário",
+    cta: "Falar com especialista",
     disclaimer:
       "A Norad Capital atua como intermediadora de crédito. A aprovação, taxas, prazos, valores e demais condições estão sujeitos à análise e aos critérios das instituições financeiras parceiras.",
   },
