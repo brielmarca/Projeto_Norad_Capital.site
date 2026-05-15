@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { siteContent } from "../data/siteContent"
 import SectionTitle from "../components/SectionTitle"
+import HeroLineBackground from "../components/HeroLineBackground"
 import { ArrowRight } from "lucide-react"
 
 const ease = [0.16, 1, 0.3, 1] as const
@@ -10,13 +11,14 @@ export default function Solucoes() {
   const { solucoes } = siteContent
 
   return (
-    <section className="min-h-screen flex items-center px-6 pt-24 pb-16">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-16">
+      <HeroLineBackground variant="solutions" />
+      <div className="relative z-10 max-w-7xl mx-auto space-y-10 sm:space-y-12 md:space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
           <SectionTitle>{solucoes.title}</SectionTitle>
           <p className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl">
@@ -34,9 +36,9 @@ export default function Solucoes() {
             >
               <Link
                 to={item.path}
-                className="group block bg-white rounded-[18px] p-12 space-y-6 border border-gold/15 shadow-sm hover:shadow-md hover:border-gold/30 transition-all duration-500"
+                className="group block border border-navy-100 rounded-3xl p-6 md:p-8 lg:p-12 space-y-6 hover:border-navy-200 hover:shadow-sm transition-all duration-500"
               >
-                <h3 className="text-3xl font-medium text-navy-900 tracking-tight">
+                <h3 className="text-2xl md:text-3xl font-medium text-navy-900 tracking-tight">
                   {item.title}
                 </h3>
                 <p className="text-navy-400 leading-relaxed">

@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Norad Capital — Institutional Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Premium institutional website for Norad Capital, a Brazilian fintech specialized in Home Equity and Real Estate Credit intermediation.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Vite** — Build tool and dev server
+- **React 19** — UI framework
+- **TypeScript** — Type safety
+- **Tailwind CSS v4** — Utility-first styling with custom theme
+- **Framer Motion** — Smooth, premium animations
+- **Lucide React** — Icon library
+- **React Router DOM** — Client-side routing
 
-## React Compiler
+## Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Header.tsx              # Fixed navbar with logo and nav links
+│   ├── Footer.tsx              # Multi-column footer with contact info
+│   ├── HeroLineBackground.tsx  # SVG line-chart decorative backgrounds
+│   ├── SectionTitle.tsx        # Reusable section heading component
+│   └── WhatsAppButton.tsx      # WhatsApp CTA button component
+├── pages/
+│   ├── Layout.tsx              # Root layout with Header + Footer
+│   ├── Home.tsx                # Landing page with hero, storytelling, CTAs
+│   ├── Sobre.tsx               # About page with national presence section
+│   ├── Solucoes.tsx            # Solutions overview
+│   ├── HomeEquity.tsx          # Home Equity educational page
+│   ├── CreditoImobiliario.tsx  # Real Estate Credit educational page
+│   ├── Processo.tsx            # 5-step intermediation process
+│   └── Contato.tsx             # Contact page
+├── data/
+│   └── siteContent.ts          # Centralized PT-BR content (single source of truth)
+├── assets/
+│   └── Noradlogo.png           # Official Norad Capital logo
+└── index.css                   # Tailwind v4 theme, colors, typography
+```
+
+## Design Tokens
+
+Defined in `src/index.css` via Tailwind v4 `@theme`:
+
+- **Navy palette:** navy-50 through navy-950
+- **Gold palette:** gold, gold-light, gold-dark, gold-muted
+- **Font:** Inter (system-ui fallback)
+
+## Content Management
+
+All visible text content lives in `src/data/siteContent.ts`. Edit this file to update copy without touching components.
+
+## Deployment
+
+Built for Cloudflare Pages:
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name norad-capital-site --branch production --commit-dirty=true
 ```

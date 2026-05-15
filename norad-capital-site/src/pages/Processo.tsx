@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { siteContent } from "../data/siteContent"
 import SectionTitle from "../components/SectionTitle"
+import HeroLineBackground from "../components/HeroLineBackground"
 
 const containerVariants = {
   hidden: {},
@@ -24,13 +25,14 @@ export default function Processo() {
   const { processo } = siteContent
 
   return (
-    <section className="min-h-screen flex items-center px-6 pt-24 pb-16">
-      <div className="max-w-5xl mx-auto space-y-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-16">
+      <HeroLineBackground variant="process" />
+      <div className="relative z-10 max-w-5xl mx-auto space-y-10 sm:space-y-12 md:space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
           <SectionTitle>{processo.title}</SectionTitle>
           <p className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl">
