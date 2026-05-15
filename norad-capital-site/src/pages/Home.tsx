@@ -41,14 +41,17 @@ export default function Home() {
   return (
     <>
       {/* 1. HERO */}
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-6 pt-24 pb-20">
-        <HeroLineBackground variant="growth" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20">
+        {/* Line-chart background — visible on all screens */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+          <HeroLineBackground variant="growth" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 md:space-y-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="text-sm md:text-base text-gold font-medium tracking-[0.2em] uppercase"
+            className="text-xs sm:text-sm md:text-base text-gold font-medium tracking-[0.2em] uppercase"
           >
             Capital estratégico para quem construiu valor.
           </motion.p>
@@ -56,7 +59,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-navy-900 leading-[1.15] sm:leading-[1.05] md:leading-[0.95]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.05] lg:leading-[0.95]"
           >
             Crédito imobiliário estruturado com inteligência
           </motion.h1>
@@ -64,7 +67,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease }}
-            className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl mx-auto"
           >
             A Norad Capital conecta pessoas e empresas a grandes bancos e
             instituições financeiras por meio de uma intermediação especializada
@@ -74,19 +77,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2"
           >
             <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-navy-900 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-navy-800 transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-navy-900 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-navy-800 transition-all duration-300"
             >
               Falar com especialista
             </a>
             <Link
               to="/solucoes"
-              className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-900 transition-colors text-sm font-medium px-6 py-4"
+              className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-900 transition-colors text-sm font-medium px-5 sm:px-6 py-3.5 sm:py-4"
             >
               Conhecer soluções <ArrowRight size={16} />
             </Link>

@@ -54,38 +54,40 @@ export default function HeroLineBackground({ variant = "growth" }: Props) {
   const { gold, navy } = paths[variant]
 
   return (
-    <svg
-      className="absolute inset-0 w-full h-full"
-      viewBox="0 0 1440 800"
-      preserveAspectRatio="xMidYMid slice"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ pointerEvents: "none" }}
-    >
-      <motion.path
-        d={gold}
-        stroke="#C8A45D"
-        strokeWidth="2"
-        vectorEffect="non-scaling-stroke"
-        strokeLinecap="round"
-        opacity={shouldReduceMotion ? 0.25 : 0.25}
-        style={{ translateY: yGold }}
-        initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={shouldReduceMotion ? { duration: 0 } : { duration: 2.5, ease, delay: 0.3 }}
-      />
-      <motion.path
-        d={navy}
-        stroke="#0A1628"
-        strokeWidth="1.5"
-        vectorEffect="non-scaling-stroke"
-        strokeLinecap="round"
-        opacity="0.15"
-        style={{ translateY: yNavy }}
-        initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={shouldReduceMotion ? { duration: 0 } : { duration: 2.5, ease, delay: 0.6 }}
-      />
-    </svg>
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 1440 800"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ pointerEvents: "none" }}
+      >
+        <motion.path
+          d={gold}
+          stroke="#C8A45D"
+          strokeWidth="1.5"
+          vectorEffect="non-scaling-stroke"
+          strokeLinecap="round"
+          opacity="0.12"
+          style={{ translateY: yGold }}
+          initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 2.5, ease, delay: 0.3 }}
+        />
+        <motion.path
+          d={navy}
+          stroke="#0A1628"
+          strokeWidth="1"
+          vectorEffect="non-scaling-stroke"
+          strokeLinecap="round"
+          opacity="0.06"
+          style={{ translateY: yNavy }}
+          initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 2.5, ease, delay: 0.6 }}
+        />
+      </svg>
+    </div>
   )
 }

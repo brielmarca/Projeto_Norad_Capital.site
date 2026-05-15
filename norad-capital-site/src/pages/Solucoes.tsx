@@ -11,14 +11,14 @@ export default function Solucoes() {
   const { solucoes } = siteContent
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center px-6 pt-24 pb-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-16">
       <HeroLineBackground variant="solutions" />
-      <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+      <div className="relative z-10 max-w-7xl mx-auto space-y-10 sm:space-y-12 md:space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
           <SectionTitle>{solucoes.title}</SectionTitle>
           <p className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl">
