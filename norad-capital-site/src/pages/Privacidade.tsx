@@ -54,10 +54,12 @@ export default function Privacidade() {
                 A Norad Capital pode coletar as seguintes categorias de dados pessoais:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong className="text-navy-600">Dados fornecidos diretamente:</strong> nome, e-mail, telefone, mensagem e demais informações enviadas por meio de formulários de contato, WhatsApp, e-mail ou atendimento presencial.</li>
-                <li><strong className="text-navy-600">Dados de navegação:</strong> endereço IP, tipo de navegador, dispositivo, páginas visitadas, tempo de permanência e dados de cookies, coletados automaticamente durante a navegação no site.</li>
-                <li><strong className="text-navy-600">Dados relacionados à operação:</strong> informações necessárias para a intermediação de crédito, como dados patrimoniais, informações sobre o imóvel e documentação solicitada durante o processo.</li>
+                <li><strong className="text-navy-600">Dados fornecidos voluntariamente:</strong> nome, e-mail, telefone, mensagem e demais informações enviadas por meio de WhatsApp, telefone, e-mail ou atendimento presencial.</li>
+                <li><strong className="text-navy-600">Dados técnicos de navegação:</strong> endereço IP, tipo de navegador, dispositivo, páginas visitadas, tempo de permanência e dados de cookies, coletados automaticamente pela plataforma de hospedagem/CDN ou por ferramentas de análise, quando habilitadas.</li>
               </ul>
+              <p className="text-sm text-navy-300 leading-relaxed mt-4">
+                A Norad Capital não realiza análise de crédito diretamente pelo site institucional. Informações adicionais eventualmente necessárias para avaliação de operações poderão ser solicitadas em etapa posterior de atendimento, por canais apropriados e conforme a necessidade da operação.
+              </p>
             </div>
           </motion.section>
 
@@ -140,10 +142,10 @@ export default function Privacidade() {
             </h2>
             <div className="space-y-3 text-base md:text-lg text-navy-400 leading-relaxed">
               <p>
-                O site da Norad Capital pode utilizar cookies e tecnologias semelhantes para melhorar a experiência de navegação, analisar o uso do site e otimizar conteúdos.
+                O site da Norad Capital utiliza cookies essenciais para seu funcionamento adequado. Quando autorizado pelo usuário, cookies de análise podem ser utilizados para melhorar a experiência de navegação e otimizar conteúdos.
               </p>
               <p>
-                Caso ferramentas de análise ou marketing sejam implementadas no futuro, esta política será atualizada para incluir informações detalhadas sobre os cookies utilizados e as opções de controle disponíveis ao usuário.
+                O site não coleta dados sensíveis, senhas, documentos ou informações de cadastro. O tratamento de dados adicionais ocorre apenas em etapas posteriores de atendimento, por canais apropriados.
               </p>
             </div>
           </motion.section>
