@@ -57,8 +57,11 @@ export default function Sobre() {
             <SectionTitle>{sobre.presence.title}</SectionTitle>
           </div>
           <div className="space-y-5 text-base md:text-lg text-navy-400 leading-relaxed">
-            {sobre.presence.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+            <p>{sobre.presence.text}</p>
+            {sobre.presence.points?.map((point, i) => (
+              <p key={i}>
+                <strong>{point.label}</strong> — {point.description}
+              </p>
             ))}
           </div>
         </motion.div>
