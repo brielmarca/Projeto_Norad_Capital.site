@@ -55,7 +55,7 @@ export default function HomeEquity() {
               {homeEquity.subtitle}
             </span>
 
-            <h1 className="text-[clamp(3.5rem,7vw,7rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[#061228] max-w-[10ch]">
+            <h1 className="text-[clamp(3rem,5vw,5.5rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[#061228] max-w-[9ch]">
               {homeEquity.title}
             </h1>
 
