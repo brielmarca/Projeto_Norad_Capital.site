@@ -51,15 +51,15 @@ export default function HomeEquity() {
             transition={{ duration: 0.6, ease }}
             className="relative z-10 max-w-[540px] py-24"
           >
-            <span className="mb-6 inline-block text-[14px] font-medium uppercase tracking-[0.32em] text-[#c89b3c]">
+            <span className="mb-6 inline-block font-['Montserrat',sans-serif] text-[11px] font-[600] tracking-[0.2em] uppercase text-[#b8974a]">
               {homeEquity.subtitle}
             </span>
 
-            <h1 className="text-[clamp(3rem,5vw,5.5rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[#061228] max-w-[9ch]">
+            <h1 className="font-['Playfair_Display',serif] text-[clamp(3rem,5vw,5.5rem)] font-[400] leading-[1.05] tracking-[-0.03em] text-[#1a2535]">
               {homeEquity.title}
             </h1>
 
-            <p className="mt-8 text-[20px] leading-[1.9] text-[#62708a]">
+            <p className="mt-8 font-['Montserrat',sans-serif] text-[15px] font-[400] leading-[1.7] text-[#2d3f55] max-w-[540px]">
               {homeEquity.intro}
             </p>
 
