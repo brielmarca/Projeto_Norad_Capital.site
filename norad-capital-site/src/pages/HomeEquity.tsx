@@ -108,19 +108,19 @@ export default function HomeEquity() {
                 opacity-60
 
                 /* MOBILE */
-                w-[620px]
-                translate-x-8
-                scale-110
+                w-[560px]
+                translate-x-6
+                scale-105
 
                 /* TABLET */
-                md:w-[760px]
-                md:translate-x-16
-                md:scale-[1.12]
+                md:w-[700px]
+                md:translate-x-12
+                md:scale-105
 
                 /* DESKTOP */
-                lg:w-[920px]
-                lg:translate-x-24
-                lg:scale-[1.12]
+                lg:w-[820px]
+                lg:translate-x-20
+                lg:scale-105
               "
             />
           </div>
