@@ -101,14 +101,26 @@ export default function HomeEquity() {
               src={casaImg}
               alt="Home Equity"
               className="
-                relative
+                relative z-10
                 max-w-none
+                object-contain
 
                 opacity-60
 
-                w-[1400px]
-                scale-[1.22]
-                translate-x-52
+                /* MOBILE */
+                w-[620px]
+                translate-x-8
+                scale-110
+
+                /* TABLET */
+                md:w-[760px]
+                md:translate-x-16
+                md:scale-[1.12]
+
+                /* DESKTOP */
+                lg:w-[920px]
+                lg:translate-x-24
+                lg:scale-[1.12]
               "
             />
           </div>
