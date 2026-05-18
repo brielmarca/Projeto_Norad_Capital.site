@@ -96,30 +96,19 @@ export default function HomeEquity() {
           </motion.div>
 
           {/* RIGHT */}
-          <div className="relative overflow-hidden">
+          <div className="relative flex items-center justify-end overflow-visible">
             <img
               src={casaImg}
               alt="Home Equity"
               className="
-                relative z-10
-                object-contain
+                relative
+                max-w-none
+
                 opacity-60
-                /* MOBILE */
-                w-[620px]
-                translate-x-16
-                scale-125
-                /* TABLET */
-                md:w-[820px]
-                md:translate-x-28
-                md:scale-[1.18]
-                /* DESKTOP */
-                lg:w-[1040px]
-                lg:translate-x-40
-                lg:scale-[1.16]
-                /* BIG SCREENS */
-                xl:w-[1180px]
-                xl:translate-x-52
-                xl:scale-[1.18]
+
+                w-[1400px]
+                scale-[1.22]
+                translate-x-52
               "
             />
           </div>
