@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import { siteContent } from "../data/siteContent"
 import WhatsAppButton from "../components/WhatsAppButton"
-import HeroLineBackground from "../components/HeroLineBackground"
 import casaImg from "../assets/CASA.png"
 
 const ease = [0.16, 1, 0.3, 1] as const
@@ -40,69 +39,77 @@ export default function HomeEquity() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden min-h-screen flex items-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20">
-        <HeroLineBackground variant="equity" goldOpacity={0.05} navyOpacity={0.025} />
+      {/* HERO — Clean Premium Composition */}
+      <section className="relative overflow-hidden bg-transparent">
 
-        <div className="absolute inset-0 pointer-events-none hidden lg:block" style={{ zIndex: 2 }}>
-          <div
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-[50%] h-[80%] bg-cover bg-right-center bg-no-repeat"
-            style={{ backgroundImage: `url(${casaImg})`, opacity: 0.18 }}
-          />
-        </div>
-
-        <div
-          className="absolute inset-0 pointer-events-none hidden lg:block"
-          style={{
-            zIndex: 3,
-            background:
-              "linear-gradient(90deg, #ffffff 0%, #ffffff 25%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.15) 75%, transparent 100%)",
-          }}
-        />
-
-        <div className="relative z-10 max-w-4xl mx-auto lg:mx-0 lg:ml-8 xl:ml-16 text-center lg:text-left space-y-6 sm:space-y-8 md:space-y-10">
-          <motion.p
+        <div className="relative mx-auto grid min-h-[92vh] max-w-[1440px] grid-cols-1 items-center px-6 lg:grid-cols-2 lg:px-16">
+          
+          {/* LEFT */}
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="text-xs sm:text-sm md:text-base text-gold font-medium tracking-[0.2em] uppercase"
+            className="relative z-10 max-w-[540px] py-24"
           >
-            {homeEquity.subtitle}
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.05] lg:leading-[0.95]"
-          >
-            {homeEquity.title}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease }}
-            className="text-base sm:text-lg md:text-xl text-navy-400 leading-relaxed lg:max-w-xl"
-          >
-            {homeEquity.intro}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease }}
-            className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4 pt-1 sm:pt-2"
-          >
-            <WhatsAppButton
-              number={WHATSAPP_NUMBER}
-              message="Olá! Gostaria de saber mais sobre Home Equity."
-              label={homeEquity.cta}
-            />
-            <Link
-              to="/processo"
-              className="inline-flex items-center gap-2 text-navy-600 hover:text-navy-900 transition-colors text-sm font-medium px-6 py-4"
-            >
-              Entender o processo <ArrowRight size={16} />
-            </Link>
+            <span className="mb-6 inline-block text-[14px] font-medium uppercase tracking-[0.32em] text-[#c89b3c]">
+              {homeEquity.subtitle}
+            </span>
+
+            <h1 className="text-[clamp(4.5rem,6vw,6.5rem)] font-[500] leading-[0.92] tracking-[-0.05em] text-[#061228]">
+              {homeEquity.title}
+            </h1>
+
+            <p className="mt-8 text-[20px] leading-[1.9] text-[#62708a]">
+              {homeEquity.intro}
+            </p>
+
+            <div className="mt-12 flex items-center gap-8">
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre Home Equity.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  rounded-full bg-[#061228]
+                  px-8 py-5
+                  text-[16px] font-medium text-white
+                  shadow-[0_14px_40px_rgba(6,18,40,0.16)]
+                  transition-all duration-300
+                  hover:-translate-y-[2px]
+                  hover:shadow-[0_20px_55px_rgba(6,18,40,0.22)]
+                "
+              >
+                Falar com especialista
+              </a>
+
+              <Link
+                to="/processo"
+                className="
+                  flex items-center gap-3
+                  text-[16px] font-medium text-[#24385b]
+                  transition-all duration-300
+                  hover:gap-4
+                "
+              >
+                Entender o processo <ArrowRight size={18} />
+              </Link>
+            </div>
           </motion.div>
+
+          {/* RIGHT */}
+          <div className="relative overflow-hidden">
+            <img
+              src={casaImg}
+              alt="Home Equity"
+              className="
+                relative z-10
+                object-contain
+                opacity-[0.68]
+                scale-[1.06]
+                translate-x-32
+                mix-blend-multiply
+              "
+            />
+          </div>
         </div>
       </section>
 
