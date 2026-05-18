@@ -103,10 +103,23 @@ export default function HomeEquity() {
               className="
                 relative z-10
                 object-contain
-                opacity-[0.68]
-                scale-[1.06]
-                translate-x-32
-                mix-blend-multiply
+                opacity-60
+                /* MOBILE */
+                w-[620px]
+                translate-x-16
+                scale-125
+                /* TABLET */
+                md:w-[820px]
+                md:translate-x-28
+                md:scale-[1.18]
+                /* DESKTOP */
+                lg:w-[1040px]
+                lg:translate-x-40
+                lg:scale-[1.16]
+                /* BIG SCREENS */
+                xl:w-[1180px]
+                xl:translate-x-52
+                xl:scale-[1.18]
               "
             />
           </div>
