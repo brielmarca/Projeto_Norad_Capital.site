@@ -109,7 +109,7 @@ export default function CreditoImobiliario() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.05] lg:leading-[0.95]"
+            className="hero-title"
           >
             Crédito Imobiliário estruturado para decisões patrimoniais.
           </motion.h1>

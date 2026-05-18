@@ -55,7 +55,7 @@ export default function HomeEquity() {
               {homeEquity.subtitle}
             </span>
 
-            <h1 className="font-['Montserrat',sans-serif] text-[clamp(3rem,5vw,5.5rem)] font-[700] leading-[1.05] tracking-[-0.03em] text-[#1a2535]">
+            <h1 className="hero-title">
               {homeEquity.title}
             </h1>
 

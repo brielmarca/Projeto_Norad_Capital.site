@@ -19,7 +19,7 @@ export default function Contato() {
           transition={{ duration: 0.8, ease }}
           className="space-y-4 sm:space-y-6"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-tight">
+          <h1 className="hero-title">
             {contato.title}
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-400 leading-relaxed max-w-2xl">

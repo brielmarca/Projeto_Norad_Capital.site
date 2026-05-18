@@ -21,7 +21,7 @@ export default function Privacidade() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-navy-900 leading-[1.15]"
+            className="hero-title"
           >
             Política de Privacidade
           </motion.h1>

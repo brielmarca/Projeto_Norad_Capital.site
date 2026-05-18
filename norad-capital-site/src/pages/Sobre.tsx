@@ -58,7 +58,7 @@ export default function Sobre() {
                 </p>
 
                 <div className="space-y-4">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-[#0f172a] leading-[1.1]">
+                  <h1 className="hero-title">
                     {sobre.title}
                   </h1>
                   <div className="w-16 h-[2px] bg-[#c8a46b]/60" />
