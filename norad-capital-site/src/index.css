@@ -39,3 +39,11 @@ body {
     scroll-behavior: auto;
   }
 }
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #1a2535;
+}
