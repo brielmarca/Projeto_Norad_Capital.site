@@ -2,6 +2,7 @@ import { siteContent } from "../data/siteContent"
 import logoSrc from "../assets/Noradlogo.png"
 import { MessageCircle, Phone, Mail, MapPin, ArrowUp } from "lucide-react"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import type { Transition, Variants } from "framer-motion"
 
 export default function Footer() {
@@ -132,14 +133,31 @@ export default function Footer() {
             variants={itemVariants}
           >
             <p className="text-xs text-navy-500">{footer.rights}</p>
-            <motion.button
-              onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-xs text-navy-400 hover:text-white transition-colors py-2"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              Voltar ao topo <ArrowUp size={12} />
-            </motion.button>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex items-center gap-4">
+                <Link
+                  to="/privacidade"
+                  className="text-xs text-navy-400 hover:text-white transition-colors"
+                >
+                  Política de Privacidade
+                </Link>
+                <span className="text-xs text-navy-700">·</span>
+                <Link
+                  to="/termos"
+                  className="text-xs text-navy-400 hover:text-white transition-colors"
+                >
+                  Termos de Uso
+                </Link>
+              </div>
+              <motion.button
+                onClick={scrollToTop}
+                className="flex items-center gap-1.5 text-xs text-navy-400 hover:text-white transition-colors py-2"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                Voltar ao topo <ArrowUp size={12} />
+              </motion.button>
+            </div>
           </motion.div>
         </motion.div>
       </div>
