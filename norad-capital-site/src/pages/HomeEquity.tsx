@@ -39,19 +39,17 @@ export default function HomeEquity() {
 
   return (
     <>
-      {/* HERO — Clean Premium Composition */}
-      <section className="relative overflow-hidden bg-transparent">
+      <section className="relative overflow-hidden bg-navy-50">
 
         <div className="relative mx-auto grid min-h-[92vh] max-w-[1440px] grid-cols-1 items-center px-6 lg:grid-cols-2 lg:px-16">
           
-          {/* LEFT */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
             className="relative z-10 max-w-[540px] py-24"
           >
-            <span className="mb-6 inline-block font-['Montserrat',sans-serif] text-[11px] font-[600] tracking-[0.2em] uppercase text-[#b8974a]">
+            <span className="mb-6 inline-block text-xs font-semibold tracking-[0.2em] uppercase text-gold-dark">
               {homeEquity.subtitle}
             </span>
 
@@ -59,7 +57,7 @@ export default function HomeEquity() {
               {homeEquity.title}
             </h1>
 
-            <p className="mt-8 font-['Montserrat',sans-serif] text-[15px] font-[400] leading-[1.7] text-[#2d3f55] max-w-[540px]">
+            <p className="mt-8 text-sm leading-relaxed text-navy-500 max-w-[540px]">
               {homeEquity.intro}
             </p>
 
@@ -69,7 +67,7 @@ export default function HomeEquity() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  rounded-full bg-[#061228]
+                  rounded-full bg-navy-900
                   px-8 py-5
                   text-[16px] font-medium text-white
                   shadow-[0_14px_40px_rgba(6,18,40,0.16)]
@@ -85,7 +83,7 @@ export default function HomeEquity() {
                 to="/processo"
                 className="
                   flex items-center gap-3
-                  text-[16px] font-medium text-[#24385b]
+                  text-sm font-medium text-navy-600
                   transition-all duration-300
                   hover:gap-4
                 "
@@ -95,39 +93,18 @@ export default function HomeEquity() {
             </div>
           </motion.div>
 
-          {/* RIGHT */}
           <div className="relative flex items-center justify-end overflow-visible">
-            <img
-              src={casaImg}
-              alt="Home Equity"
-              className="
-                relative z-10
-                max-w-none
-                object-contain
-
-                opacity-60
-
-                /* MOBILE */
-                w-[560px]
-                translate-x-6
-                scale-105
-
-                /* TABLET */
-                md:w-[700px]
-                md:translate-x-12
-                md:scale-105
-
-                /* DESKTOP */
-                lg:w-[820px]
-                lg:translate-x-20
-                lg:scale-105
-              "
-            />
+            <div className="relative overflow-hidden rounded-[32px] bg-navy-50">
+              <img
+                src={casaImg}
+                alt="Home Equity"
+                className="w-full object-contain opacity-90 mix-blend-darken saturate-[0.9] contrast-[0.97]"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* O QUE É HOME EQUITY */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -148,7 +125,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* PARA QUEM FAZ SENTIDO */}
       <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -169,7 +145,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* POSSIBILIDADES PARA O CAPITAL */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -190,7 +165,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* COMO A NORAD CONDUZ A OPERAÇÃO */}
       <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -227,7 +201,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* TRANSPARÊNCIA */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -248,7 +221,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -300,7 +272,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* DISCLAIMER */}
       <section className="py-16 px-6 border-t border-navy-100">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs md:text-sm text-navy-300 leading-relaxed">
@@ -309,7 +280,6 @@ export default function HomeEquity() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
       <section className="py-16 md:py-24 lg:py-32 px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

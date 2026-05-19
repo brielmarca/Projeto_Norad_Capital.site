@@ -10,7 +10,7 @@ export default function Contato() {
   const { contato } = siteContent
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-16">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-16 bg-navy-50">
       <HeroLineBackground variant="contact" />
       <div className="relative z-10 max-w-5xl mx-auto w-full space-y-10 sm:space-y-12 md:space-y-16">
         <motion.div

@@ -2,18 +2,18 @@
 
 @theme {
   --color-navy-950: #070b14;
-  --color-navy-900: #0c1220;
+  --color-navy-900: #0D2340;
   --color-navy-800: #121a2e;
   --color-navy-700: #1a2540;
   --color-navy-600: #2a3a5c;
   --color-navy-500: #4a5f82;
-  --color-navy-400: #7a8ea8;
+  --color-navy-400: #5F6B7A;
   --color-navy-300: #a8b8cc;
   --color-navy-200: #d0dae6;
   --color-navy-100: #e8edf3;
-  --color-navy-50: #f5f7fa;
-  --color-gold: #c9a84c;
-  --color-gold-light: #e0c878;
+  --color-navy-50: #F7F8FA;
+  --color-gold: #C9A44C;
+  --color-gold-light: #E8D3A5;
   --color-gold-dark: #a8882e;
   --color-gold-muted: #d4c49a;
   --color-accent: #c8a46b;
@@ -42,8 +42,8 @@ body {
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
-  line-height: 1.15;
-  color: #1a2535;
+  line-height: 1.2;
+  color: #0D2340;
 }
