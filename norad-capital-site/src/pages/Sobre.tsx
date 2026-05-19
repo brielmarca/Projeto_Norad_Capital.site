@@ -17,15 +17,12 @@ export default function Sobre() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen bg-[#f8f8f6] px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16 sm:pb-20">
+      <section className="relative overflow-hidden min-h-screen bg-navy-50 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-16 sm:pb-20">
         <HeroLineBackground variant="institutional" />
 
-        {/* Right Side: Executive Portrait — Refined Visibility */}
         <div className="absolute inset-y-0 right-0 w-[48%] lg:w-[45%] pointer-events-none overflow-hidden">
-          {/* Subtle depth blur behind image */}
           <div className="absolute inset-0 backdrop-blur-[2px] z-0" />
           
-          {/* Executive portrait — balanced visibility */}
           <img
             src={executivo}
             alt=""
@@ -39,11 +36,9 @@ export default function Sobre() {
             }}
           />
           
-          {/* Soft white atmospheric overlay — reduced opacity */}
-          <div className="absolute inset-0 bg-[#f8f8f6]/35 z-10" />
+          <div className="absolute inset-0 bg-navy-50/35 z-10" />
         </div>
 
-        {/* Left Side: Editorial Content */}
         <div className="relative z-40 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -53,15 +48,15 @@ export default function Sobre() {
               className="space-y-8 lg:space-y-10"
             >
               <div className="space-y-3">
-                <p className="text-xs font-medium tracking-[0.25em] uppercase text-[#c8a46b]/80">
+                <p className="text-xs font-medium tracking-[0.25em] uppercase text-gold/80">
                   Assessoria em Crédito Estruturado
                 </p>
 
                 <div className="space-y-4">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-[#0f172a] leading-[1.1]">
+                  <h1 className="hero-title">
                     {sobre.title}
                   </h1>
-                  <div className="w-16 h-[2px] bg-[#c8a46b]/60" />
+                  <div className="w-16 h-[2px] bg-gold/60" />
                 </div>
               </div>
 
@@ -87,7 +82,7 @@ export default function Sobre() {
                 <div className="flex items-center gap-8 lg:gap-12">
                   {features.map((feature, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <feature.icon size={18} className="text-[#c8a46b]/70 shrink-0" strokeWidth={1.5} />
+                      <feature.icon size={18} className="text-gold/70 shrink-0" strokeWidth={1.5} />
                       <span className="text-xs font-medium tracking-wide text-navy-600 uppercase">
                         {feature.label}
                       </span>
@@ -105,7 +100,6 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* Presence Section */}
       <section className="py-16 md:py-24 lg:py-32 px-6 bg-navy-900">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

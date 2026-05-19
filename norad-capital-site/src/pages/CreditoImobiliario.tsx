@@ -78,21 +78,17 @@ export default function CreditoImobiliario() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden min-h-screen flex items-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20 bg-[#F5F5F7]">
+      <section className="relative overflow-hidden min-h-screen flex items-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20 bg-navy-50">
         <HeroLineBackground variant="realestate" goldOpacity={0.05} navyOpacity={0.025} />
 
-        {/* Premium visual frame — right side, desktop only */}
         <div className="absolute right-4 sm:right-6 lg:right-8 xl:right-12 top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 2, width: '42%' }}>
-          <div className="relative overflow-hidden rounded-[28px] border border-navy-100/60 bg-white/80 shadow-[0_8px_40px_-12px_rgba(10,22,40,0.08)]" style={{ paddingBottom: '65%' }}>
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${aptImg})`, opacity: 0.7 }}
+          <div className="relative overflow-hidden rounded-[32px]" style={{ paddingBottom: '65%' }}>
+            <img
+              src={aptImg}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover brightness-[0.98] saturate-[0.9] opacity-95"
             />
-            <div
-              className="absolute inset-0"
-              style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(245,245,247,0.5) 100%)' }}
-            />
+            <div className="absolute inset-0 bg-[#f5f5f3]/25" />
           </div>
         </div>
 
@@ -109,7 +105,7 @@ export default function CreditoImobiliario() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.05] lg:leading-[0.95]"
+            className="hero-title"
           >
             Crédito Imobiliário estruturado para decisões patrimoniais.
           </motion.h1>
@@ -136,7 +132,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* O QUE É CRÉDITO IMOBILIÁRIO */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -157,7 +152,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* CAMINHOS */}
       <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -199,7 +193,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* PARA QUEM FAZ SENTIDO */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -238,7 +231,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* NORAD VALUE */}
       <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-900">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -280,7 +272,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* PROCESSO */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -318,7 +309,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* TRANSPARÊNCIA */}
       <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -339,7 +329,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-24 md:py-32 lg:py-40 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -391,7 +380,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* DISCLAIMER */}
       <section className="py-16 px-6 border-t border-navy-100">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs md:text-sm text-navy-300 leading-relaxed">
@@ -400,7 +388,6 @@ export default function CreditoImobiliario() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
       <section className="py-16 md:py-24 lg:py-32 px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

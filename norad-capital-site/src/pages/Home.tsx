@@ -51,8 +51,7 @@ export default function Home() {
   return (
     <>
       {/* 1. HERO */}
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20">
-        {/* Line-chart background — visible on all screens */}
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20 bg-navy-50">
         <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
           <HeroLineBackground variant="growth" />
         </div>
@@ -69,7 +68,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-navy-900 leading-[1.2] sm:leading-[1.15] md:leading-[1.05] lg:leading-[0.95]"
+            className="hero-title"
           >
             Crédito imobiliário estruturado com inteligência
           </motion.h1>
@@ -227,9 +226,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Chart card */}
           <div className="bg-navy-800/50 rounded-2xl border border-white/[0.06] p-6 md:p-10">
-            {/* Legend */}
             <div className="flex flex-wrap items-center justify-center gap-6 mb-8 md:mb-12">
               <div className="flex items-center gap-2.5">
                 <div className="w-3 h-5 rounded-sm bg-navy-400/40" />
@@ -245,33 +242,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Chart — scrollable on mobile */}
             <div className="overflow-x-auto pb-2 -mx-2 px-2">
               <div className="min-w-[540px]">
-                {/* Grid lines */}
                 <div className="relative">
-                  {/* 100% line */}
                   <div className="absolute left-0 right-0 top-0 flex items-center gap-1">
                     <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">100</span>
                     <div className="flex-1 border-t border-white/[0.04]" />
                   </div>
-                  {/* 75% line */}
                   <div className="absolute left-0 right-0 flex items-center gap-1" style={{ top: "25%" }}>
                     <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">75</span>
                     <div className="flex-1 border-t border-white/[0.04]" />
                   </div>
-                  {/* 50% line */}
                   <div className="absolute left-0 right-0 flex items-center gap-1" style={{ top: "50%" }}>
                     <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">50</span>
                     <div className="flex-1 border-t border-white/[0.04]" />
                   </div>
-                  {/* 25% line */}
                   <div className="absolute left-0 right-0 flex items-center gap-1" style={{ top: "75%" }}>
                     <span className="text-[10px] text-navy-500 w-8 text-right tabular-nums">25</span>
                     <div className="flex-1 border-t border-white/[0.04]" />
                   </div>
 
-                  {/* Bar groups */}
                   <div className="relative flex items-end justify-around pt-8 pb-16 pl-10" style={{ height: "280px" }}>
                     {comparisonItems.map((item, i) => (
                       <motion.div
@@ -282,9 +272,7 @@ export default function Home() {
                         transition={{ duration: 0.5, delay: i * 0.1, ease }}
                         className="flex flex-col items-center gap-2"
                       >
-                        {/* Bars */}
                         <div className="flex items-end gap-1.5" style={{ height: "240px" }}>
-                          {/* Market bar */}
                           <div className="flex flex-col items-center justify-end relative" style={{ width: "28px", height: "100%" }}>
                             <span className="text-[10px] text-navy-400 font-medium tabular-nums mb-1">
                               {item.market}%
@@ -297,7 +285,6 @@ export default function Home() {
                               className="w-full rounded-t-sm bg-navy-400/40 absolute bottom-0"
                             />
                           </div>
-                          {/* Norad bar */}
                           <div className="flex flex-col items-center justify-end relative" style={{ width: "28px", height: "100%" }}>
                             <span className="text-[10px] text-gold font-medium tabular-nums mb-1">
                               {item.norad}%
@@ -311,7 +298,6 @@ export default function Home() {
                             />
                           </div>
                         </div>
-                        {/* Label */}
                         <p className="text-[11px] text-navy-300 text-center leading-tight max-w-[80px] mt-2">
                           {item.label}
                         </p>
