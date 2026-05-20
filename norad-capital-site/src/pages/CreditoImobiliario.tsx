@@ -81,14 +81,29 @@ export default function CreditoImobiliario() {
       <section className="relative overflow-hidden min-h-screen flex items-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-20 bg-navy-50">
         <HeroLineBackground variant="realestate" goldOpacity={0.05} navyOpacity={0.025} />
 
-        <div className="absolute right-4 sm:right-6 lg:right-8 xl:right-12 top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 2, width: '42%' }}>
-          <div className="relative overflow-hidden rounded-[32px]" style={{ paddingBottom: '65%' }}>
+        {/* Building image - same style as HomeEquity house */}
+        <div className="absolute inset-y-0 right-0 hidden lg:flex items-center justify-end overflow-visible" style={{ zIndex: 1, width: '50%' }}>
+          <div className="relative">
             <img
               src={aptImg}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover brightness-[0.98] saturate-[0.9] opacity-95"
+              className="w-full object-contain opacity-50"
             />
-            <div className="absolute inset-0 bg-[#f5f5f3]/25" />
+
+            {/* Light wash overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-navy-50/15" />
+
+            {/* Edge softening - left */}
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-50 via-navy-50/60 to-transparent" />
+
+            {/* Edge softening - right */}
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-50 via-navy-50/60 to-transparent" />
+
+            {/* Bottom atmospheric fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-navy-50 via-navy-50/70 to-transparent" />
+
+            {/* Top soft fade */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-navy-50 via-navy-50/50 to-transparent" />
           </div>
         </div>
 

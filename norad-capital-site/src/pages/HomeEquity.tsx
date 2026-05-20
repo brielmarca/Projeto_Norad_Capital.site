@@ -94,12 +94,31 @@ export default function HomeEquity() {
           </motion.div>
 
           <div className="relative flex items-center justify-end overflow-visible">
-            <div className="relative overflow-hidden rounded-[32px] bg-navy-50">
+            <div className="relative">
               <img
                 src={casaImg}
                 alt="Home Equity"
-                className="w-full object-contain opacity-90 mix-blend-darken saturate-[0.9] contrast-[0.97]"
+                className="
+                  w-full
+                  object-contain
+                  opacity-50
+                "
               />
+
+              {/* Light wash overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-navy-50/15" />
+
+              {/* Edge softening - left */}
+              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-50 via-navy-50/60 to-transparent" />
+              
+              {/* Edge softening - right */}
+              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-50 via-navy-50/60 to-transparent" />
+
+              {/* Bottom atmospheric fade */}
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-navy-50 via-navy-50/70 to-transparent" />
+
+              {/* Top soft fade */}
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-navy-50 via-navy-50/50 to-transparent" />
             </div>
           </div>
         </div>
