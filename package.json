@@ -1,0 +1,11 @@
+{
+  "name": "NordaCapitalProject",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm --prefix norad-capital-site clean-install --progress=false",
+    "build": "npm --prefix norad-capital-site run build",
+    "dev": "npm --prefix norad-capital-site run dev",
+    "preview": "npm --prefix norad-capital-site run preview"
+  }
+}
