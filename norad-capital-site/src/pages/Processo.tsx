@@ -1,79 +1,156 @@
 import { motion } from "framer-motion"
 import { siteContent } from "../data/siteContent"
-import SectionTitle from "../components/SectionTitle"
-import HeroLineBackground from "../components/HeroLineBackground"
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-}
+import { Link } from "react-router-dom"
 
 const ease = [0.16, 1, 0.3, 1] as const
-
-const stepVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease },
-  },
-}
 
 export default function Processo() {
   const { processo } = siteContent
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-12 sm:pb-16 bg-navy-50">
-      <HeroLineBackground variant="process" />
-      <div className="relative z-10 max-w-5xl mx-auto space-y-10 sm:space-y-12 md:space-y-16">
+    <main className="bg-surface text-on-surface">
+      <section className="pt-48 pb-32 text-center px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease }}
-          className="space-y-4 sm:space-y-6"
+          transition={{ duration: 0.6, ease }}
+          className="inline-block mb-6 px-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-low text-secondary text-xs font-semibold tracking-widest uppercase"
         >
-          <SectionTitle>{processo.title}</SectionTitle>
-          <p className="text-lg md:text-xl text-navy-400 leading-relaxed max-w-2xl">
-            {processo.subtitle}
-          </p>
+          Estratégia & Execução
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid md:grid-cols-2 gap-x-16 gap-y-14"
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease, delay: 0.1 }}
+          className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary max-w-4xl mx-auto leading-tight"
         >
-          {processo.steps.map((step, i) => (
-            <motion.div
-              key={i}
-              variants={stepVariants}
-              className="space-y-4"
-            >
-              <span className="block text-6xl font-light text-gold/35 leading-none">
-                {step.number}
-              </span>
-              <h3 className="text-2xl font-medium text-navy-900 tracking-tight">
-                {step.title}
-              </h3>
-              <p className="text-navy-400 leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+          {processo.title}
+        </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8, ease }}
-          className="text-sm text-navy-400 max-w-xl leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease, delay: 0.2 }}
+          className="mt-8 text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed"
         >
-          {processo.note}
+          {processo.subtitle}
         </motion.p>
-      </div>
-    </section>
+      </section>
+
+      <section className="pb-40 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="space-y-32 md:space-y-40">
+            {processo.steps.map((step, index) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, ease }}
+                viewport={{ once: true, margin: "-80px" }}
+                className="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+              >
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="flex flex-col space-y-6">
+                      <span className="font-display text-6xl md:text-7xl font-bold text-secondary-fixed-dim/40 group-hover:text-secondary-fixed-dim transition-colors duration-500 leading-none">
+                        {step.number}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-semibold text-primary tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+
+                    <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-[0_40px_60px_-10px_rgba(0,0,0,0.05)]">
+                      <img
+                        src={step.image}
+                        alt={`Etapa ${step.number}: ${step.title}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="order-2 md:order-1 relative rounded-xl overflow-hidden aspect-[4/3] shadow-[0_40px_60px_-10px_rgba(0,0,0,0.05)]">
+                      <img
+                        src={step.image}
+                        alt={`Etapa ${step.number}: ${step.title}`}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                    </div>
+
+                    <div className="order-1 md:order-2 flex flex-col space-y-6 md:pl-16">
+                      <span className="font-display text-6xl md:text-7xl font-bold text-secondary-fixed-dim/40 group-hover:text-secondary-fixed-dim transition-colors duration-500 leading-none">
+                        {step.number}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-semibold text-primary tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 bg-primary-container text-on-primary">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease }}
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-surface-bright mb-12"
+          >
+            {processo.cta.title}
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease, delay: 0.15 }}
+            className="flex flex-col md:flex-row gap-6 justify-center items-center"
+          >
+            <Link
+              to="/contato"
+              className="bg-surface-bright text-primary px-12 py-5 rounded-full text-base md:text-lg font-semibold hover:opacity-90 transition-all hover:-translate-y-1 shadow-xl"
+            >
+              {processo.cta.primary}
+            </Link>
+            <a
+              href={`https://wa.me/${siteContent.contato.whatsapp.number}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border border-outline-variant/30 text-surface-bright px-12 py-5 rounded-full text-base md:text-lg hover:bg-surface-bright/10 transition-all"
+            >
+              {processo.cta.secondary}
+            </a>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease, delay: 0.3 }}
+            className="mt-12 text-on-primary-container text-sm"
+          >
+            {processo.cta.footer}
+          </motion.p>
+        </div>
+      </section>
+    </main>
   )
 }

@@ -1,12 +1,10 @@
 import { siteContent } from "../data/siteContent"
-import logoSrc from "../assets/Noradlogo.png"
-import { MessageCircle, Phone, Mail, MapPin, ArrowUp } from "lucide-react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import type { Transition, Variants } from "framer-motion"
 
 export default function Footer() {
-  const { footer, company, contato } = siteContent
+  const { footer, company } = siteContent
 
   const premiumEase: [number, number, number, number] = [0.22, 1, 0.36, 1]
   const revealTransition: Transition = { duration: 0.8, ease: premiumEase }
@@ -28,138 +26,121 @@ export default function Footer() {
     },
   }
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
   return (
-    <footer className="bg-navy-950 text-navy-300 py-12 md:py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-surface w-full py-20 border-t border-outline-variant/30">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-8">
         <motion.div
-          className="w-12 h-0.5 bg-gold mb-10"
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: 0.7, ease: premiumEase }}
-          style={{ transformOrigin: "left" }}
-        />
-
-        <motion.div
-          className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12"
-          variants={containerVariants}
+          className="col-span-1 md:col-span-1"
+          variants={itemVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-120px" }}
+          viewport={{ once: true }}
         >
-          <motion.div className="space-y-4" variants={itemVariants}>
-            <img
-              src={logoSrc}
-              alt="Norad Capital"
-              className="h-7 sm:h-8 md:h-9 w-auto object-contain"
-              style={{ filter: "brightness(0) invert(1)" }}
-            />
-            <p className="text-sm text-navy-400 leading-relaxed max-w-xs">
-              {company.description}
-            </p>
-          </motion.div>
-
-          <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-xs font-semibold tracking-widest text-navy-200 uppercase">
-              Contato
-            </h3>
-            <motion.div
-              className="space-y-3"
-              variants={containerVariants}
-            >
-              <motion.a
-                href={`https://wa.me/${contato.whatsapp.number}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors py-2"
-                variants={itemVariants}
-              >
-                <MessageCircle size={14} />
-                {contato.whatsapp.label}
-              </motion.a>
-              <motion.a
-                href={`tel:${contato.phone}`}
-                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors py-2"
-                variants={itemVariants}
-              >
-                <Phone size={14} />
-                {contato.phone}
-              </motion.a>
-              <motion.a
-                href={`mailto:${contato.email.address}`}
-                className="flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors py-2"
-                variants={itemVariants}
-              >
-                <Mail size={14} />
-                {contato.email.address}
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-xs font-semibold tracking-widest text-navy-200 uppercase">
-              Escritório
-            </h3>
-            <motion.div
-              className="flex items-start gap-2 text-sm text-navy-400 leading-relaxed"
-              variants={itemVariants}
-            >
-              <MapPin size={14} className="mt-0.5 shrink-0" />
-              <span>{contato.office}</span>
-            </motion.div>
-          </motion.div>
+          <img
+            src={company.logoUrl}
+            alt="Norad Capital"
+            className="h-8 mb-6"
+          />
+          <p className="text-base text-on-surface-variant leading-relaxed">
+            {company.footerTagline}
+          </p>
         </motion.div>
 
         <motion.div
-          className="border-t border-navy-800 pt-8 mt-8 space-y-6"
+          className="flex flex-col space-y-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-120px" }}
+          viewport={{ once: true }}
         >
-          <motion.p
-            className="text-xs text-navy-500 leading-relaxed max-w-3xl"
+          <h4 className="text-base font-semibold text-primary">Soluções</h4>
+          <motion.a
+            href="/home-equity"
+            className="text-on-surface-variant hover:text-primary transition-colors"
             variants={itemVariants}
           >
-            {footer.disclaimer}
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+            Home Equity
+          </motion.a>
+          <motion.a
+            href="/credito-imobiliario"
+            className="text-on-surface-variant hover:text-primary transition-colors"
             variants={itemVariants}
           >
-            <p className="text-xs text-navy-500">{footer.rights}</p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex items-center gap-4">
-                <Link
-                  to="/privacidade"
-                  className="text-xs text-navy-400 hover:text-white transition-colors"
-                >
-                  Política de Privacidade
-                </Link>
-                <span className="text-xs text-navy-700">·</span>
-                <Link
-                  to="/termos"
-                  className="text-xs text-navy-400 hover:text-white transition-colors"
-                >
-                  Termos de Uso
-                </Link>
-              </div>
-              <motion.button
-                onClick={scrollToTop}
-                className="flex items-center gap-1.5 text-xs text-navy-400 hover:text-white transition-colors py-2"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-              >
-                Voltar ao topo <ArrowUp size={12} />
-              </motion.button>
-            </div>
-          </motion.div>
+            Crédito Estruturado
+          </motion.a>
+          <motion.a
+            href="/contato"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+            variants={itemVariants}
+          >
+            Capital de Giro
+          </motion.a>
         </motion.div>
+
+        <motion.div
+          className="flex flex-col space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h4 className="text-base font-semibold text-primary">Institucional</h4>
+          <motion.a
+            href="/sobre"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+            variants={itemVariants}
+          >
+            Sobre Nós
+          </motion.a>
+          <motion.a
+            href="/contato"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+            variants={itemVariants}
+          >
+            Trabalhe Conosco
+          </motion.a>
+          <motion.a
+            href="/contato"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+            variants={itemVariants}
+          >
+            Compliance
+          </motion.a>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h4 className="text-base font-semibold text-primary">Legal</h4>
+          <Link
+            to="/privacidade"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+          >
+            Privacidade
+          </Link>
+          <Link
+            to="/termos"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+          >
+            Termos de Uso
+          </Link>
+          <Link
+            to="/contato"
+            className="text-on-surface-variant hover:text-primary transition-colors"
+          >
+            Ouvidoria
+          </Link>
+        </motion.div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 mt-20 pt-8 border-t border-outline-variant/10 text-center md:text-left">
+        <span className="text-base text-on-surface-variant text-sm">
+          {footer.rights}
+        </span>
       </div>
     </footer>
   )
