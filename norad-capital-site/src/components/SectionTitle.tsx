@@ -1,10 +1,14 @@
 interface SectionTitleProps {
   children: string
+  id?: string
 }
 
-export default function SectionTitle({ children }: SectionTitleProps) {
+export default function SectionTitle({ children, id }: SectionTitleProps) {
   return (
-    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-navy-900 leading-tight">
+    <h2
+      id={id}
+      className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-tight"
+    >
       {children}
     </h2>
   )

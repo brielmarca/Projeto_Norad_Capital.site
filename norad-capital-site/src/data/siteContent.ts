@@ -4,6 +4,8 @@ export const siteContent = {
     tagline: "Crédito Estruturado com Inteligência",
     description:
       "Assessoria em crédito imobiliário com clareza e acompanhamento especializado.",
+    logoUrl: "https://lh3.googleusercontent.com/aida/ADBb0uhcH5PMRmD9PCxjkE7c9ONSlJZniWZ3x57z77r91V0gTgPilD2zFlAswYWOFmrASwj7vWKlYUNs4jE0HxqtUJLonsNrHbFqo75s1zomX6SaUWeQZRxhDtsjZbxYlQyx0soTrgBFCDLgYfHrd8WgT3nt_Mv2s9SpQT25hJkGw4OUjzXl6HUeOKAHCvYcwWjBRhTTNIFlafbi0j54yrs-J3W-u7YqEMRa2pzbNUhT3hYxuHiJD4-NhlwCwQ",
+    footerTagline: "Exclusividade e inteligência financeira para o seu patrimônio.",
   },
 
   nav: [
@@ -178,34 +180,45 @@ export const siteContent = {
         number: "01",
         title: "Conversa",
         description:
-          "Compreendemos suas necessidades, objetivos e perfil financeiro em uma conversa inicial sem compromisso.",
+          "Compreendemos suas necessidades, objetivos e perfil financeiro em uma conversa inicial sem compromisso. É o momento de alinhar expectativas e desenhar o caminho inicial.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfQ1hIFiNw4OQPVEdOoscixww6t9CApMnvDFZSaTAXaec5JVGS9olZIAfHv6DJYeiYv3Tq6LfhgMuRi-qZTVc2zPmOmkoiQ5PqtvFrkkvSL8wAsEncwGrUjjULZtfJCrLGdJvjuHaUebLeEJQyQvciD1xyTuodOaMKegOU0N2QKp1J9nPIx9GdYlgb4rSEWDXK0yln6chOAwDnXbhqK7Q6zltpS-dfYDSfBaR8P-SSUhW8B1ri9kB8j3rIzCz8H5AqxWZgGoxC7Mg",
       },
       {
         number: "02",
         title: "Estruturação",
         description:
-          "Analisamos as melhores opções disponíveis e estruturamos uma proposta personalizada com condições claras.",
+          "Analisamos as melhores opções disponíveis e estruturamos uma proposta personalizada com condições claras. Cada detalhe é meticulosamente planejado para sua segurança.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKoivdTppyROFuzJvAiashI0zyJp_-exvdyF11_F8AyEqqfBenowjY2QASca4vjaithbA_GDQQtNCPx5uVyyRPSatfcSwc2hXHPqSpDOx5zxB0iQUTeHpWxkLzlqV6WGGQvMp-Ohr5mTA18I7Md0WTbI2PU5FWY_zWgTeF0d1_n9dgoQwhDA3aFyE37d_DJZMmYQRhYczhi_4w1wbJPCWuTR03TvyQsb3kWaU5YUopGb3pxzi7eNyWapUuOhYpzTDXIigqRnRWrPk",
       },
       {
         number: "03",
         title: "Indicação Institucional",
         description:
-          "Apresentamos sua proposta às instituições financeiras parceiras mais alinhadas ao seu perfil.",
+          "Apresentamos sua proposta às instituições financeiras parceiras mais alinhadas ao seu perfil. Nossa rede de contatos exclusiva garante acesso às melhores mesas de operação.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBOB8IHtD7gLpadD9rCQk2XXHQDwZF70fTiwK3sUKS4zzKptsYnZNh2myOYtlJY3nzI38DbPtBP0BIEjKJkSACnMO29ENowiDPiw6QKXOwFugO1EoVHZGfoD_32EnwYts4f0eulWzOp8BUL8_0l3iKEWrYYwl0WTs9phjNHBu_9jXigOPEAsGc2cmf5Lfwt7InfI6oFWa5CdHOgUZo0Lx0E8wuKVeqkQqDItoST-zgyMk2teJPypNn4kkktTt44ptIuF5Uo4GkyP68",
       },
       {
         number: "04",
         title: "Suporte Documental",
         description:
-          "Auxiliamos na organização e entrega de toda a documentação necessária para a análise de crédito.",
+          "Auxiliamos na organização e entrega de toda a documentação necessária para a análise de crédito. Nossa equipe cuida da burocracia para que você mantenha o foco no que importa.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbUHlYFj4_uY49VZvgaiLaFwP0kiravEZS2tdKIFYLLkuOCwY6ncwI5eUSn6kM7QTKAHLI0_WM8d677Ot-JuSKKKnJaUmxhYxqGzmJHRKrcnbJii-pp_tS9hdYhBlSUi4cqfL7oMwccuOstl2-luXisom6BXQq0YYJ6wjqqWspbsFcqBl84ftvbPZHV7hbYeDQ-Dj6yt4t3uFiMSU27Euvd9wXR_uZOAX5e1mQZeevioN7emozHWDzDs-hpmY2vsWd2Cd6FXR25pY",
       },
       {
         number: "05",
         title: "Acompanhamento da Formalização",
         description:
-          "Acompanhamos o processo de análise e formalização até a conclusão, mantendo você informado em cada etapa.",
+          "Acompanhamos o processo de análise e formalização até a conclusão, mantendo você informado em cada etapa. O encerramento de um ciclo é o início de sua nova solidez patrimonial.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiAmFfLQwv8m6_-4ohHFO5FZM9MM75QHEzzaYEbjckKJrTbX4BufDNac1UTtmtmNgcBObvxJ3qaK5AjvQymvPJf8DhzGqo1YcEoni9Ydd6Vym81vlRfv2M7LuzE4w5fb8dN5MBsgjxdsxXhaN3Sxgoye2G3YO_uFuJFlaYkjDzQNSQPnZImDDUsucvy656LvQG0WvI45czNlFzhtFqdromtKvaipqmmat_VYJtTpllyXxY7y6HbdcADlw29VQhQ3kxtz0ylXDIRF4",
       },
     ],
     note: "As condições finais estão sujeitas à análise e aprovação das instituições financeiras parceiras.",
+    cta: {
+      title: "Pronto para começar?",
+      primary: "Solicitar Consultoria",
+      secondary: "Falar com Especialista",
+      footer: "Norad Capital — Gestão de Ativos e Crédito Estruturado",
+    },
   },
 
   contato: {
