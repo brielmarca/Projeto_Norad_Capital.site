@@ -209,7 +209,7 @@ export const siteContent = {
         title: "Acompanhamento da Formalização",
         description:
           "Acompanhamos o processo de análise e formalização até a conclusão, mantendo você informado em cada etapa. O encerramento de um ciclo é o início de sua nova solidez patrimonial.",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiAmFfLQwv8m6_-4ohHFO5FZM9MM75QHEzzaYEbjckKJrTbX4BufDNac1UTtmtmNgcBObvxJ3qaK5AjvQymvPJf8DhzGqo1YcEoni9Ydd6Vym81vlRfv2M7LuzE4w5fb8dN5MBsgjxdsxXhaN3Sxgoye2G3YO_uFuJFlaYkjDzQNSQPnZImDDUsucvy656LvQG0WvI45czNlFzhtFqdromtKvaipqmmat_VYJtTpllyXxY7y6HbdcADlw29VQhQ3kxtz0ylXDIRF4",
+        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
       },
     ],
     note: "As condições finais estão sujeitas à análise e aprovação das instituições financeiras parceiras.",
