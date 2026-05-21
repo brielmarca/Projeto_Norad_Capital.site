@@ -165,7 +165,7 @@ export default function Solucoes() {
               </p>
             </div>
             <div className="md:w-1/2 md:pl-12 md:border-l border-outline-variant/10">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <li className="flex flex-col gap-2">
                   <span className="text-secondary text-2xl">💼</span>
                   <span className="font-bold text-primary">Limites Flexíveis</span>
@@ -181,12 +181,6 @@ export default function Solucoes() {
                   </span>
                 </li>
               </ul>
-              <Link
-                to="/contato"
-                className="bg-primary text-on-primary w-full py-5 rounded-full font-bold hover:opacity-90 transition-all active:scale-95 block text-center"
-              >
-                Consultar Limites Corporativos
-              </Link>
             </div>
           </div>
         </div>
