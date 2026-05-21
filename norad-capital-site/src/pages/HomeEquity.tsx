@@ -1,331 +1,186 @@
-import { motion } from "framer-motion"
-import { ArrowRight, ChevronDown } from "lucide-react"
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
-import { useState } from "react"
-import { siteContent } from "../data/siteContent"
-import WhatsAppButton from "../components/WhatsAppButton"
-import casaImg from "../assets/CASA.png"
-
-const ease = [0.16, 1, 0.3, 1] as const
-
-const WHATSAPP_NUMBER = "5511999999999"
-
-const faq = [
-  {
-    question: "Posso continuar usando meu imóvel durante a operação?",
-    answer: "Sim. O imóvel permanece em seu nome e pode continuar sendo utilizado normalmente. A garantia é registrada em cartório, sem transferência de propriedade.",
-  },
-  {
-    question: "Quais tipos de imóvel podem ser usados como garantia?",
-    answer: "Imóveis residenciais, comerciais e terrenos com registro regular podem ser considerados. A viabilidade depende da avaliação da instituição financeira.",
-  },
-  {
-    question: "Quanto tempo leva o processo de estruturação?",
-    answer: "O prazo varia conforme a complexidade da operação, a documentação disponível e os critérios da instituição financeira. Acompanhamos cada etapa para garantir agilidade e clareza.",
-  },
-  {
-    question: "A Norad Capital é uma instituição financeira?",
-    answer: "Não. A Norad Capital atua como intermediadora de crédito, conectando clientes a grandes bancos e instituições financeiras especializadas em crédito imobiliário.",
-  },
-  {
-    question: "Quais são os custos envolvidos?",
-    answer: "Os custos dependem da instituição financeira e podem incluir taxas de avaliação, registro e análise de crédito. Todas as informações são apresentadas com transparência antes da formalização.",
-  },
-]
 
 export default function HomeEquity() {
-  const { homeEquity } = siteContent
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  useEffect(() => {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0")
+            entry.target.classList.remove("opacity-0", "translate-y-12")
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const elements = document.querySelectorAll(".reveal-element")
+    elements.forEach((el) => {
+      el.classList.add("opacity-0", "translate-y-12", "transition-all", "duration-[1000ms]", "ease-out")
+      revealObserver.observe(el)
+    })
+
+    return () => revealObserver.disconnect()
+  }, [])
 
   return (
-    <>
-      <section className="relative overflow-hidden bg-navy-50">
+    <main className="smooth-scroll">
+      {/* Hero Section */}
+      <header className="relative h-[100vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            alt="Hero"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTHPRuwbn7_VApWI0t6DPFkcH9R0z4kvLWnQjy9OWVyW9EBW221kKc2wAGUYqgBI8KSrO2GTQJ5i1rUNhlfx--Mc3TRDSch90OSZ4IrvDZfoxjCs6Y6eUdm4r5mS9uHk8DFb5eOwl_8ut7Rl4xWxfpAl4Gaw6mQcOd2_fBNLgg6X5Z3CAag03H5zhHGrhHllkIs5UbRKwvXoWACMyHcgP1bMZwunlJgLNqKK1iUtbMOjEqbYGYDjbYmekbdrUKwydtxkYAo0MN9EQ"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+        </div>
+        <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+          <span className="inline-block px-4 py-1.5 mb-6 bg-secondary-fixed-dim/20 backdrop-blur-md border border-white/20 rounded-full text-white text-[12px] leading-[16px] font-semibold uppercase tracking-[0.2em]">
+            SELEÇÃO PRIVADA
+          </span>
+          <h1 className="font-display text-[40px] md:text-[64px] leading-[1.1] text-white mb-8 max-w-4xl mx-auto leading-tight" style={{ textShadow: "0 4px 12px rgba(0,0,0,0.3)" }}>
+            Transforme seu Patrimônio em Capital Estratégico
+          </h1>
+          <p className="text-[18px] leading-[28px] text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+            O Home Equity da Norad Capital oferece liquidez imediata com as melhores taxas do mercado, preservando sua liberdade financeira.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              to="/contato"
+              className="bg-white text-primary px-10 py-5 rounded-full text-[12px] leading-[16px] font-semibold uppercase tracking-widest shadow-xl hover:bg-surface-container-low transition-all"
+            >
+              Solicitar Análise de Viabilidade
+            </Link>
+            <Link
+              to="/solucoes"
+              className="text-white border border-white/30 backdrop-blur-sm px-10 py-5 rounded-full text-[12px] leading-[16px] font-semibold uppercase tracking-widest hover:bg-white/10 transition-all flex items-center gap-2"
+            >
+              Nossas Taxas <span>→</span>
+            </Link>
+          </div>
+        </div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="text-white text-3xl">↓</span>
+        </div>
+      </header>
 
-        <div className="relative mx-auto grid min-h-[92vh] max-w-[1440px] grid-cols-1 items-center px-6 lg:grid-cols-2 lg:px-16">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-            className="relative z-10 max-w-[540px] py-24"
-          >
-            <span className="mb-6 inline-block text-xs font-semibold tracking-[0.2em] uppercase text-gold-dark">
-              {homeEquity.subtitle}
-            </span>
-
-            <h1 className="hero-title">
-              {homeEquity.title}
-            </h1>
-
-            <p className="mt-8 text-sm leading-relaxed text-navy-500 max-w-[540px]">
-              {homeEquity.intro}
-            </p>
-
-            <div className="mt-12 flex items-center gap-8">
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre Home Equity.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  rounded-full bg-navy-900
-                  px-8 py-5
-                  text-[16px] font-medium text-white
-                  shadow-[0_14px_40px_rgba(6,18,40,0.16)]
-                  transition-all duration-300
-                  hover:-translate-y-[2px]
-                  hover:shadow-[0_20px_55px_rgba(6,18,40,0.22)]
-                "
-              >
-                Falar com especialista
-              </a>
-
-              <Link
-                to="/processo"
-                className="
-                  flex items-center gap-3
-                  text-sm font-medium text-navy-600
-                  transition-all duration-300
-                  hover:gap-4
-                "
-              >
-                Entender o processo <ArrowRight size={18} />
-              </Link>
+      {/* Wealth Snapshot / Stats Section */}
+      <section className="relative z-20 -mt-20 px-margin-mobile">
+        <div className="max-w-container-max mx-auto">
+          <div className="bg-white/80 backdrop-blur-[20px] p-12 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-12 border border-white/40 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] reveal-element">
+            <div className="flex flex-col gap-2">
+              <span className="text-on-surface-variant text-[12px] leading-[16px] font-semibold uppercase tracking-wider">Taxas Iniciais</span>
+              <span className="font-display text-[48px] text-primary">0.85%<small className="text-[20px] ml-1">+ IPCA</small></span>
+              <p className="text-on-surface-variant text-[16px] leading-[24px]">Condições institucionais exclusivas.</p>
             </div>
-          </motion.div>
+            <div className="flex flex-col gap-2 border-y md:border-y-0 md:border-x border-outline-variant/30 py-8 md:py-0 md:px-12">
+              <span className="text-on-surface-variant text-[12px] leading-[16px] font-semibold uppercase tracking-wider">Prazo Máximo</span>
+              <span className="font-display text-[48px] text-primary">240<small className="text-[20px] ml-1">meses</small></span>
+              <p className="text-on-surface-variant text-[16px] leading-[24px]">Flexibilidade para o seu fluxo de caixa.</p>
+            </div>
+            <div className="flex flex-col gap-2 md:pl-4">
+              <span className="text-on-surface-variant text-[12px] leading-[16px] font-semibold uppercase tracking-wider">LTV (VALOR DO EMPRÉSTIMO)</span>
+              <span className="font-display text-[48px] text-primary">60%<small className="text-[20px] ml-1">do valor</small></span>
+              <p className="text-on-surface-variant text-[16px] leading-[24px]">Máxima eficiência sobre o ativo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="relative flex items-center justify-end overflow-visible">
-            <div className="relative">
+      {/* Liquidez e Precisão Section */}
+      <section className="py-40 bg-surface-bright overflow-hidden">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative reveal-element">
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl"></div>
               <img
-                src={casaImg}
-                alt="Home Equity"
-                className="
-                  w-full
-                  object-contain
-                  opacity-50
-                "
+                alt="Precision"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwLjuHcdzeOKcR9EUkmtQFFCBSd0x_YoiI8yBBKMAkc89rE_Irqk6_X9pS0NuJYz-6XHbKSLTxpGpP95kfIrgGM9Yik9fBYaYxIcmXXQkhmsM3fNt1D_RHpbX5KI-iYqN_D9_fnDqaF3Uh9mXXSrzYzt3ypNR4eaGx-aXFTv_hytKd6zXfWexG92Q8n4r-RDyzuOQ1yPohBzilxcvfjeXde7Kf-3Efq9ZGf--_3TK21gS3UOXRjxkLvjroJZPnTx4Qz9uhqyU4RQA"
+                className="rounded-lg shadow-2xl relative z-10 w-full object-cover aspect-square"
               />
-
-              {/* Light wash overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-navy-50/15" />
-
-              {/* Edge softening - left */}
-              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-navy-50 via-navy-50/60 to-transparent" />
-              
-              {/* Edge softening - right */}
-              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-navy-50 via-navy-50/60 to-transparent" />
-
-              {/* Bottom atmospheric fade */}
-              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-navy-50 via-navy-50/70 to-transparent" />
-
-              {/* Top soft fade */}
-              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-navy-50 via-navy-50/50 to-transparent" />
+              <div className="absolute -bottom-10 -right-10 bg-white/80 backdrop-blur-[20px] p-8 rounded-lg border border-white/40 shadow-xl z-20 hidden md:block">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-secondary-fixed-dim rounded-full flex items-center justify-center text-on-secondary-fixed">
+                    <span>✓</span>
+                  </div>
+                  <div>
+                    <h4 className="text-[20px] leading-none mb-1 text-primary">Aprovação Rápida</h4>
+                    <p className="text-on-surface-variant text-[16px] leading-[24px]">Análise técnica em 48h</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-8 reveal-element">
+              <span className="text-secondary text-[12px] leading-[16px] font-semibold uppercase tracking-[0.2em]">Exclusividade</span>
+              <h2 className="text-[32px] leading-[40px] md:text-[48px] md:leading-[56px] text-primary">Liquidez e Precisão para o seu Próximo Salto</h2>
+              <p className="text-[18px] leading-[28px] text-on-surface-variant leading-relaxed">
+                Entendemos que tempo é o ativo mais valioso para o investidor institucional. Nosso processo de Home Equity é desenhado para oferecer a precisão de um relógio suíço e a liquidez necessária para oportunidades imediatas.
+              </p>
+              <ul className="flex flex-col gap-6 mt-4">
+                <li className="flex items-start gap-4">
+                  <span className="text-secondary mt-1 text-2xl">🏦</span>
+                  <div>
+                    <h5 className="font-bold text-primary mb-1">Taxas Institucionais</h5>
+                    <p className="text-on-surface-variant">Acesso a taxas diferenciadas praticadas apenas no mercado de capitais.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="text-secondary mt-1 text-2xl">📅</span>
+                  <div>
+                    <h5 className="font-bold text-primary mb-1">Termos Flexíveis</h5>
+                    <p className="text-on-surface-variant">Carência e amortização customizadas de acordo com o seu perfil de renda.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="text-secondary mt-1 text-2xl">🤝</span>
+                  <div>
+                    <h5 className="font-bold text-primary mb-1">Assessoria Dedicada</h5>
+                    <p className="text-on-surface-variant">Um Advisor exclusivo para estruturar a operação ponta-a-ponta.</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32 lg:py-40 px-6">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
-            className="space-y-4"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">01</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              O que é Home Equity
-            </h2>
-            <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-2xl">
-              {homeEquity.sections[0].text}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
-            className="space-y-4"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">02</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              Para quem faz sentido
-            </h2>
-            <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-2xl">
-              {homeEquity.sections[1].text}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 lg:py-40 px-6">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
-            className="space-y-4"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">03</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              Possibilidades para o capital
-            </h2>
-            <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-2xl">
-              O capital acessado por meio do Home Equity pode ser direcionado para diversas finalidades: expansão de negócios, reestruturação patrimonial, investimentos de longo prazo, planejamento sucessório ou projetos pessoais. Sem restrições de uso — com liberdade e clareza.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
-            className="space-y-4"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">04</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              Como a Norad conduz a operação
-            </h2>
-            <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-2xl">
-              {homeEquity.sections[2].text}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15, ease }}
-            className="space-y-4 pt-12 md:pt-16"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">05</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              Acompanhamento consultivo
-            </h2>
-            <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-2xl">
-              {homeEquity.sections[3].text}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 lg:py-40 px-6">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
-            className="space-y-6"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">06</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              Transparência em cada etapa
-            </h2>
-            <p className="text-base md:text-lg text-navy-400 leading-relaxed max-w-2xl">
-              As informações apresentadas neste site têm caráter institucional e informativo. A contratação de qualquer operação depende de análise de crédito, documentação, avaliação da garantia e aprovação da instituição financeira responsável.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 lg:py-40 px-6 bg-navy-50">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
-            className="space-y-4 mb-16 md:mb-20"
-          >
-            <span className="text-xs font-medium text-navy-300 tracking-[0.15em] tabular-nums">07</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-navy-900">
-              Perguntas frequentes
-            </h2>
-          </motion.div>
-
-          <div className="space-y-0 divide-y divide-navy-100">
-            {faq.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease }}
-              >
-                <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between py-6 text-left group"
-                >
-                  <span className="text-base md:text-lg font-light text-navy-900 pr-8">
-                    {item.question}
-                  </span>
-                  <ChevronDown
-                    size={20}
-                    className="text-navy-300 shrink-0 transition-transform duration-300"
-                    style={{ transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)" }}
-                  />
-                </button>
-                <div
-                  className="overflow-hidden transition-all duration-300"
-                  style={{ maxHeight: openIndex === i ? "200px" : "0px", opacity: openIndex === i ? 1 : 0 }}
-                >
-                  <p className="pb-6 text-base text-navy-400 leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+      {/* Bento Grid Services */}
+      <section className="py-40 bg-white">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="text-center mb-20 reveal-element">
+            <h2 className="text-[32px] leading-[40px] mb-4 text-primary">Inteligência Imobiliária</h2>
+            <p className="text-on-surface-variant max-w-xl mx-auto">Soluções sob medida para proprietários de imóveis de alto padrão.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-6 grid-rows-2 gap-gutter h-auto md:h-[600px]">
+            <div className="md:col-span-3 bg-surface-container-low p-10 rounded-lg flex flex-col justify-end group hover:bg-primary-container hover:text-white transition-all duration-500 cursor-pointer reveal-element">
+              <span className="text-4xl mb-6 text-secondary group-hover:text-secondary-fixed-dim">🏢</span>
+              <h3 className="text-[24px] leading-[32px] mb-2">Soluções Corporativas</h3>
+              <p className="opacity-70">Estruturação de crédito para expansão de holdings e galpões logísticos.</p>
+            </div>
+            <div className="md:col-span-3 bg-surface-container-low p-10 rounded-lg flex flex-col justify-end group hover:bg-primary-container hover:text-white transition-all duration-500 cursor-pointer reveal-element">
+              <span className="text-4xl mb-6 text-secondary group-hover:text-secondary-fixed-dim">🏡</span>
+              <h3 className="text-[24px] leading-[32px] mb-2">Soluções Residenciais</h3>
+              <p className="opacity-70">Aporte de capital utilizando sua residência como garantia estratégica.</p>
+            </div>
+            <div className="md:col-span-2 bg-surface-container-low p-10 rounded-lg flex flex-col justify-end group hover:bg-primary-container hover:text-white transition-all duration-500 cursor-pointer reveal-element">
+              <span className="text-4xl mb-6 text-secondary group-hover:text-secondary-fixed-dim">⚖️</span>
+              <h3 className="text-[20px] leading-[28px] mb-2">Planejamento Sucessório</h3>
+              <p className="opacity-70 text-sm">Crédito para equalização de quinhões hereditários.</p>
+            </div>
+            <div className="md:col-span-4 bg-surface-container-low p-10 rounded-lg flex flex-col justify-end group hover:bg-primary-container hover:text-white transition-all duration-500 cursor-pointer overflow-hidden relative reveal-element">
+              <div className="relative z-10">
+                <h3 className="text-[24px] leading-[32px] mb-2">Capital de Giro</h3>
+                <p className="opacity-70">Capital de giro para empresas com garantia imobiliária dos sócios.</p>
+              </div>
+              <div className="absolute right-[-20px] bottom-[-20px] opacity-10 group-hover:opacity-20 transition-opacity">
+                <span className="text-[180px]">🏛</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-      <section className="py-16 px-6 border-t border-navy-100">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs md:text-sm text-navy-300 leading-relaxed">
-            {homeEquity.disclaimer}
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 lg:py-32 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
-          className="max-w-xl mx-auto text-center space-y-8"
-        >
-          <p className="text-sm text-gold font-medium tracking-[0.15em] uppercase">
-            Norad Capital
-          </p>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight text-navy-900">
-            Agende uma conversa.
-          </h2>
-          <p className="text-lg text-navy-400 leading-relaxed">
-            Atendimento personalizado e acompanhamento consultivo em cada etapa
-            da operação.
-          </p>
-          <div className="pt-2">
-            <WhatsAppButton
-              number={WHATSAPP_NUMBER}
-              message="Olá! Gostaria de agendar uma conversa sobre Home Equity."
-              label={homeEquity.cta}
-            />
-          </div>
-        </motion.div>
-      </section>
-    </>
+    </main>
   )
 }
