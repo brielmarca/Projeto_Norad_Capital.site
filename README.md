@@ -1,88 +1,57 @@
-# Norad Capital
+# Norad Capital — Institutional Website
 
-Official repository for the Norad Capital institutional website.
+Responsive institutional website created for Norad Capital, a Brazilian financial-services company. The project presents the company, its solutions and contact channels through a clear, accessible and mobile-first experience.
 
-Norad Capital is a Brazilian fintech specialized in the intermediation, structuring and advisory support of Home Equity and Real Estate Credit operations.
+**Preview:** [norad-capital-site.pages.dev](https://norad-capital-site.pages.dev/)
 
-## Structure
+## Highlights
 
-```
-/
-├── Norad_Capital/              # Project context and development guidelines
-│   └── contexto-ia.txt         # Full AI context for website development
-├── norad-capital-site/         # Institutional website (Vite + React + TypeScript)
-│   ├── src/
-│   │   ├── components/         # Reusable UI components
-│   │   │   ├── Header.tsx
-│   │   │   ├── Footer.tsx
-│   │   │   ├── HeroLineBackground.tsx
-│   │   │   ├── SectionTitle.tsx
-│   │   │   └── WhatsAppButton.tsx
-│   │   ├── pages/              # Route pages
-│   │   │   ├── Home.tsx
-│   │   │   ├── Sobre.tsx
-│   │   │   ├── Solucoes.tsx
-│   │   │   ├── HomeEquity.tsx
-│   │   │   ├── CreditoImobiliario.tsx
-│   │   │   ├── Processo.tsx
-│   │   │   └── Contato.tsx
-│   │   ├── data/
-│   │   │   └── siteContent.ts  # Centralized PT-BR content
-│   │   ├── assets/             # Images and logos
-│   │   └── index.css           # Tailwind v4 theme + global styles
-│   └── public/                 # Static assets (partner logos, _redirects)
-└── *.pdf / *.docx / *.jpeg     # Internal business documents (not for the website)
-```
+- Responsive layout for mobile, tablet and desktop
+- Portuguese-language institutional content
+- Reusable page and interface components
+- Route-based navigation
+- Subtle motion and interaction feedback
+- Accessibility-conscious structure and visual hierarchy
+- Static deployment optimized for Cloudflare Pages
 
-## Website
+## Pages
 
-The website (`norad-capital-site/`) is a premium institutional frontend built with Vite, React, TypeScript, Tailwind CSS v4, Framer Motion, Lucide React and React Router DOM.
+- Home
+- Company
+- Solutions
+- Partners
+- Contact
+- Legal and informational pages
 
-### Pages
+## Technology
 
-| Route | Description |
-|---|---|
-| `/` | Home — Hero, storytelling, solutions preview, audience segmentation, partners, CTA |
-| `/sobre` | About Norad Capital — Company info, national presence |
-| `/solucoes` | Solutions overview — Home Equity and Crédito Imobiliário |
-| `/home-equity` | Home Equity detail — Educational, multi-section with CTAs |
-| `/credito-imobiliario` | Real Estate Credit detail — Educational, multi-section with CTAs |
-| `/processo` | Intermediation process — 5-step flow |
-| `/contato` | Contact — WhatsApp, email, phone, office info |
+- React
+- TypeScript
+- Vite
+- Tailwind CSS 4
+- React Router
+- Framer Motion
+- Cloudflare Pages
 
-### Design System
+## Run locally
 
-- **Colors:** Deep navy (950–50), white, soft gray, gold accent (#c9a84c)
-- **Typography:** Inter (300–700), light weight headlines, medium body
-- **Style:** Apple-inspired minimalism — clean layout, large spacing, calm animations
-- **Backgrounds:** Subtle SVG line-chart decorative elements in hero sections
+Requirements: Node.js 20+ and npm.
 
-### Development
+    npm install
+    npm run dev
 
-```bash
-cd norad-capital-site
-npm install
-npm run dev       # Development server
-npm run build     # Production build
-npm run preview   # Preview production build
-```
+Create a production build with:
 
-### Deployment
+    npm run build
 
-Deployed to Cloudflare Pages via Wrangler CLI:
+## Scope
 
-```bash
-cd norad-capital-site
-npm run build
-npx wrangler pages deploy dist --project-name norad-capital-site --branch production --commit-dirty=true
-```
+This repository contains the public-facing website. It does not process loan applications, store customer financial data or provide an authenticated banking environment.
 
-Production URL: https://norad-capital-site.pages.dev/
+## Deployment
 
-## Important
+The site is built as a static front end and published on Cloudflare Pages. Environment-specific values must be configured through the deployment platform and must not be committed to the repository.
 
-This is a frontend-only, premium institutional website. No backend, login, database, authentication or loan processing.
+## Author
 
-All visible content must be in Brazilian Portuguese (PT-BR).
-
-**Full project context available at:** `Norad_Capital/contexto-ia.txt`
+Developed by [Gabriel Marca](https://github.com/brielmarca).
