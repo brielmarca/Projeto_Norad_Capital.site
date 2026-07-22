@@ -12,8 +12,7 @@
 
 ## Demonstration
 
-<!-- Replace the path below with the screenshot of the project's home page. -->
-![Norad Capital home page](./assets/home-page.png)
+![Norad Capital home page](./assets/home-page.svg)
 
 ## Project Overview
 
