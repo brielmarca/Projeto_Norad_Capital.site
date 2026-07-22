@@ -12,7 +12,7 @@
 
 ## Demonstration
 
-![Norad Capital home page](./assets/home-page.svg)
+![Norad Capital home page](./assets/norad.png)
 
 ## Project Overview
 
